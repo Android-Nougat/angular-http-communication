@@ -33,7 +33,7 @@ export class DataService {
 
   getAllBooks(): Observable<Book[] | BookTrackerError> {
     console.log("getting books")
-    return this.http.get<Book[]>('/api/errors/500').
+    return this.http.get<Book[]>('/api/books').
     pipe(
       catchError(err=>this.handleHttpError(err))
     )
