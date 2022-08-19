@@ -1,0 +1,2 @@
+- https://bobbyhadz.com/blog/typescript-syntax-requires-imported-helper-but-module-tslib-cannot
+- https://github.com/bricewilson/angular-http-communication/tree/Configuring_an_Application_to_Make_HTTP_Requests
