@@ -1,18 +1,17 @@
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from "@angular/common/http";
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpContextToken } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
-@Injectable({
-    providedIn:'root'
-})
+export const CONTEXT_TYPE = new HttpContextToken(() => 'application/json');
 
-export class AddHeaderInterceptor implements HttpInterceptor{
+@Injectable()
+export class AddHeaderInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         console.log(`AddHeaderInterceptor - ${req.url}`);
 
-        let jsonReq : HttpRequest<any> = req.clone({
-            setHeaders : {
-                'Content-Type':'application/json'
+        let jsonReq: HttpRequest<any> = req.clone({
+            setHeaders: {
+                'Content-Type': req.context.get(CONTEXT_TYPE)
             }
         });
 

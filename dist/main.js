@@ -273,27 +273,29 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CONTEXT_TYPE": () => (/* binding */ CONTEXT_TYPE),
 /* harmony export */   "AddHeaderInterceptor": () => (/* binding */ AddHeaderInterceptor)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 841);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
 
 
+
+const CONTEXT_TYPE = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpContextToken(() => 'application/json');
 let AddHeaderInterceptor = class AddHeaderInterceptor {
     intercept(req, next) {
         console.log(`AddHeaderInterceptor - ${req.url}`);
         let jsonReq = req.clone({
             setHeaders: {
-                'Content-Type': 'application/json'
+                'Content-Type': req.context.get(CONTEXT_TYPE)
             }
         });
         return next.handle(jsonReq);
     }
 };
-AddHeaderInterceptor = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
-        providedIn: 'root'
-    })
+AddHeaderInterceptor = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)()
 ], AddHeaderInterceptor);
 
 
@@ -430,15 +432,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DataService": () => (/* binding */ DataService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ 841);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 205);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 5304);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 8002);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 8307);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 841);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 205);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 5304);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 8002);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 8307);
 /* harmony import */ var app_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/data */ 8387);
 /* harmony import */ var app_models_bookTrackerError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! app/models/bookTrackerError */ 5582);
+/* harmony import */ var _add_header_interceptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./add-header.interceptors */ 643);
+
 
 
 
@@ -462,39 +466,41 @@ let DataService = class DataService {
     }
     getAllBooks() {
         console.log("getting books");
-        return this.http.get('/api/books').
-            pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.catchError)(err => this.handleHttpError(err)));
+        return this.http.get('/api/books', {
+            context: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpContext().set(_add_header_interceptors__WEBPACK_IMPORTED_MODULE_2__.CONTEXT_TYPE, 'application/xml')
+        }).
+            pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(err => this.handleHttpError(err)));
     }
     handleHttpError(err) {
         let tracker = new app_models_bookTrackerError__WEBPACK_IMPORTED_MODULE_1__.BookTrackerError();
         tracker.errorNumber = 100;
         tracker.friendlyMessage = 'An error occured while receiving the data',
             tracker.message = err.message;
-        return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.throwError)(tracker);
+        return (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.throwError)(tracker);
     }
     getBookById(id) {
-        let getHeaders = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__.HttpHeaders({
+        let getHeaders = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpHeaders({
             'Accept': 'application/json',
             'Authorization': 'my-token'
         });
         return this.http.get(`/api/books/${id}`, { headers: getHeaders });
     }
     getOldBooks(id) {
-        return this.http.get(`/api/books/${id}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)((data) => ({
+        return this.http.get(`/api/books/${id}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)((data) => ({
             bookTitle: data.title,
             year: data.publicationYear
-        })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.tap)((oldBook) => console.log(oldBook)));
+        })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.tap)((oldBook) => console.log(oldBook)));
     }
     addBook(newBook) {
         return this.http.post(`/api/books/`, newBook, {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__.HttpHeaders({
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpHeaders({
                 'Content-Type': 'application/json'
             })
         });
     }
     updateBook(updatedBook) {
         return this.http.put(`/api/books/${updatedBook.bookID}`, updatedBook, {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__.HttpHeaders({
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpHeaders({
                 'Content-Type': 'application/json'
             })
         });
@@ -504,10 +510,10 @@ let DataService = class DataService {
     }
 };
 DataService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__.HttpClient }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient }
 ];
-DataService = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Injectable)({
+DataService = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_9__.Injectable)({
         providedIn: 'root'
     })
 ], DataService);
