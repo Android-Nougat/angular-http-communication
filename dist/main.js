@@ -125,7 +125,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var app_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/dashboard/dashboard.component */ 7528);
 /* harmony import */ var app_edit_book_edit_book_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/edit-book/edit-book.component */ 445);
 /* harmony import */ var app_edit_reader_edit_reader_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/edit-reader/edit-reader.component */ 6236);
-/* harmony import */ var _core_book_resolver_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./core/book-resolver.service */ 195);
+/* harmony import */ var _core_book_resolver_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./core/book-resolver.service */ 7195);
 
 
 
@@ -203,11 +203,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ 3679);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common/http */ 841);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ 1841);
 /* harmony import */ var _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add-book/add-book.component */ 9884);
 /* harmony import */ var _add_reader_add_reader_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./add-reader/add-reader.component */ 4808);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ 5041);
@@ -216,8 +216,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_book_edit_book_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./edit-book/edit-book.component */ 445);
 /* harmony import */ var _edit_reader_edit_reader_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./edit-reader/edit-reader.component */ 6236);
 /* harmony import */ var _core_book_tracker_error_handler_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./core/book-tracker-error-handler.service */ 9772);
-/* harmony import */ var _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./core/add-header.interceptors */ 643);
-/* harmony import */ var _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./core/log-response.interceptors */ 921);
+/* harmony import */ var _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./core/add-header.interceptors */ 9643);
+/* harmony import */ var _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./core/log-response.interceptors */ 2921);
+/* harmony import */ var _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./core/cache.interceptor */ 354);
+
 
 
 
@@ -235,8 +237,8 @@ __webpack_require__.r(__webpack_exports__);
 
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_11__.NgModule)({
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_12__.NgModule)({
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent,
             _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_4__.DashboardComponent,
@@ -246,15 +248,16 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
             _add_reader_add_reader_component__WEBPACK_IMPORTED_MODULE_1__.AddReaderComponent
         ],
         providers: [
-            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_11__.ErrorHandler, useClass: _core_book_tracker_error_handler_service__WEBPACK_IMPORTED_MODULE_7__.BookTrackerErrorHandlerService },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HTTP_INTERCEPTORS, useClass: _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__.AddHeaderInterceptor, multi: true },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HTTP_INTERCEPTORS, useClass: _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__.LogResponseInterceptor, multi: true },
+            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_12__.ErrorHandler, useClass: _core_book_tracker_error_handler_service__WEBPACK_IMPORTED_MODULE_7__.BookTrackerErrorHandlerService },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_13__.HTTP_INTERCEPTORS, useClass: _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__.AddHeaderInterceptor, multi: true },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_13__.HTTP_INTERCEPTORS, useClass: _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__.LogResponseInterceptor, multi: true },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_13__.HTTP_INTERCEPTORS, useClass: _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__.CacheInterceptor, multi: true },
         ],
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_13__.BrowserModule,
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_14__.BrowserModule,
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__.AppRoutingModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormsModule,
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HttpClientModule
+            _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormsModule,
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_13__.HttpClientModule
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent]
     })
@@ -264,7 +267,7 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
 
 /***/ }),
 
-/***/ 643:
+/***/ 9643:
 /*!*************************************************!*\
   !*** ./src/app/core/add-header.interceptors.ts ***!
   \*************************************************/
@@ -277,7 +280,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AddHeaderInterceptor": () => (/* binding */ AddHeaderInterceptor)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 841);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 1841);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
 
 
@@ -342,7 +345,7 @@ BadgeService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
 
 /***/ }),
 
-/***/ 195:
+/***/ 7195:
 /*!***********************************************!*\
   !*** ./src/app/core/book-resolver.service.ts ***!
   \***********************************************/
@@ -421,6 +424,63 @@ BookTrackerErrorHandlerService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorat
 
 /***/ }),
 
+/***/ 354:
+/*!*******************************************!*\
+  !*** ./src/app/core/cache.interceptor.ts ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CacheInterceptor": () => (/* binding */ CacheInterceptor)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 1841);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 5917);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 8307);
+/* harmony import */ var _http_cache_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./http-cache.service */ 74);
+
+
+
+
+
+
+let CacheInterceptor = class CacheInterceptor {
+    constructor(cacheService) {
+        this.cacheService = cacheService;
+    }
+    intercept(req, next) {
+        if (req.method !== 'GET') {
+            console.log(`Invalidating cache ... ${req} - ${req.url}`);
+            this.cacheService.invalidateCache();
+            return next.handle(req);
+        }
+        let cachedData = this.cacheService.get(req.url);
+        if (cachedData) {
+            console.log(`Obtaining from the cache ${req} - ${req.url}`);
+            return (0,rxjs__WEBPACK_IMPORTED_MODULE_1__.of)(cachedData);
+        }
+        return next.handle(req).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.tap)((event) => {
+            if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpResponse) {
+                console.log('Adding item to the cache');
+                this.cacheService.put(req.url, event);
+            }
+        }));
+    }
+};
+CacheInterceptor.ctorParameters = () => [
+    { type: _http_cache_service__WEBPACK_IMPORTED_MODULE_0__.HttpCacheService }
+];
+CacheInterceptor = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Injectable)()
+], CacheInterceptor);
+
+
+
+/***/ }),
+
 /***/ 3943:
 /*!**************************************!*\
   !*** ./src/app/core/data.service.ts ***!
@@ -434,14 +494,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 841);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 1841);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 205);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 5304);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 8002);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 8307);
 /* harmony import */ var app_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/data */ 8387);
 /* harmony import */ var app_models_bookTrackerError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! app/models/bookTrackerError */ 5582);
-/* harmony import */ var _add_header_interceptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./add-header.interceptors */ 643);
+/* harmony import */ var _add_header_interceptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./add-header.interceptors */ 9643);
 
 
 
@@ -522,7 +582,50 @@ DataService = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
 
 /***/ }),
 
-/***/ 921:
+/***/ 74:
+/*!********************************************!*\
+  !*** ./src/app/core/http-cache.service.ts ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "HttpCacheService": () => (/* binding */ HttpCacheService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+
+
+let HttpCacheService = class HttpCacheService {
+    constructor() {
+        this.requests = {};
+    }
+    put(url, response) {
+        this.requests[url] = response;
+    }
+    get(url) {
+        return this.requests[url];
+    }
+    invalidateUrl(url) {
+        this.requests[url] = undefined;
+    }
+    invalidateCache() {
+        this.requests = {};
+    }
+};
+HttpCacheService.ctorParameters = () => [];
+HttpCacheService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
+        providedIn: 'root'
+    })
+], HttpCacheService);
+
+
+
+/***/ }),
+
+/***/ 2921:
 /*!***************************************************!*\
   !*** ./src/app/core/log-response.interceptors.ts ***!
   \***************************************************/
@@ -534,7 +637,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "LogResponseInterceptor": () => (/* binding */ LogResponseInterceptor)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ 841);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ 1841);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs/operators */ 8307);
 
