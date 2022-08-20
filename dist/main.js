@@ -433,13 +433,14 @@ BookTrackerErrorHandlerService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorat
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CACHABLE": () => (/* binding */ CACHABLE),
 /* harmony export */   "CacheInterceptor": () => (/* binding */ CacheInterceptor)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 1841);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ 1841);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 5917);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 8307);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 5917);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 8307);
 /* harmony import */ var _http_cache_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./http-cache.service */ 74);
 
 
@@ -447,11 +448,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const CACHABLE = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpContextToken(() => true);
 let CacheInterceptor = class CacheInterceptor {
     constructor(cacheService) {
         this.cacheService = cacheService;
     }
     intercept(req, next) {
+        if (!req.context.get(CACHABLE)) {
+            return next.handle(req);
+        }
         if (req.method !== 'GET') {
             console.log(`Invalidating cache ... ${req} - ${req.url}`);
             this.cacheService.invalidateCache();
@@ -460,10 +465,10 @@ let CacheInterceptor = class CacheInterceptor {
         let cachedData = this.cacheService.get(req.url);
         if (cachedData) {
             console.log(`Obtaining from the cache ${req} - ${req.url}`);
-            return (0,rxjs__WEBPACK_IMPORTED_MODULE_1__.of)(cachedData);
+            return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(cachedData);
         }
-        return next.handle(req).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.tap)((event) => {
-            if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpResponse) {
+        return next.handle(req).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.tap)((event) => {
+            if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpResponse) {
                 console.log('Adding item to the cache');
                 this.cacheService.put(req.url, event);
             }
@@ -501,7 +506,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 8307);
 /* harmony import */ var app_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/data */ 8387);
 /* harmony import */ var app_models_bookTrackerError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! app/models/bookTrackerError */ 5582);
-/* harmony import */ var _add_header_interceptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./add-header.interceptors */ 9643);
+/* harmony import */ var _cache_interceptor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cache.interceptor */ 354);
 
 
 
@@ -527,7 +532,7 @@ let DataService = class DataService {
     getAllBooks() {
         console.log("getting books");
         return this.http.get('/api/books', {
-            context: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpContext().set(_add_header_interceptors__WEBPACK_IMPORTED_MODULE_2__.CONTEXT_TYPE, 'application/xml')
+            context: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpContext().set(_cache_interceptor__WEBPACK_IMPORTED_MODULE_2__.CACHABLE, false)
         }).
             pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(err => this.handleHttpError(err)));
     }

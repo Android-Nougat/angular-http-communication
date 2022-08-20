@@ -9,7 +9,7 @@ import { Book } from "app/models/book";
 import { BookTrackerError } from 'app/models/bookTrackerError';
 
 import { OldBook } from '../models/oldBook';
-import { CONTEXT_TYPE } from './add-header.interceptors';
+import { CACHABLE } from './cache.interceptor';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +35,7 @@ export class DataService {
   getAllBooks(): Observable<Book[] | BookTrackerError> {
     console.log("getting books")
     return this.http.get<Book[]>('/api/books',{
-      context : new HttpContext().set(CONTEXT_TYPE,'application/xml')
+      context : new HttpContext().set(CACHABLE,false)
     }).
     pipe(
       catchError(err=>this.handleHttpError(err))
