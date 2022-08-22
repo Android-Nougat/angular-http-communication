@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AddBookComponent } from './add-book/add-book.component';
@@ -18,9 +18,11 @@ import { CacheInterceptor } from './core/cache.interceptor';
 import { LoginComponent } from './component/login-component/login.component';
 import { AuthService } from './service/auth.service';
 import { RouterModule, Routes } from '@angular/router';
+import { ProfileComponent } from './component/profile-component/profile.component';
 
 const route: Routes = [
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'profile', component: ProfileComponent }
 ]
 
 @NgModule({
@@ -31,7 +33,8 @@ const route: Routes = [
     EditReaderComponent,
     EditBookComponent,
     AddReaderComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   providers: [
     { provide: ErrorHandler, useClass: BookTrackerErrorHandlerService },
@@ -45,6 +48,7 @@ const route: Routes = [
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(route)
   ],
   bootstrap: [AppComponent]

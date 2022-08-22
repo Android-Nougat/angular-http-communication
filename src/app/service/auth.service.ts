@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { UInterface } from "../interface";
+import { ProfileInterface, UInterface } from "../interface";
 
 @Injectable()
 export class AuthService {
@@ -16,5 +16,10 @@ export class AuthService {
 
     isLoggedIn() {
         return !!this.currentUser;
+    }
+
+    updateCurrentUser(profile: ProfileInterface) {
+        this.currentUser.lastName = profile.lastName;
+        this.currentUser.firstName = profile.firstName;
     }
 }

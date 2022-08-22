@@ -9,3 +9,8 @@ export interface UInterface {
     userName:string;
     password:string;
   }
+
+  export interface ProfileInterface{
+    firstName:string;
+    lastName:string;
+  }

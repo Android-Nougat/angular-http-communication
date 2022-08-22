@@ -209,11 +209,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/forms */ 3679);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ 1841);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common/http */ 1841);
 /* harmony import */ var _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add-book/add-book.component */ 9884);
 /* harmony import */ var _add_reader_add_reader_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./add-reader/add-reader.component */ 4808);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ 5041);
@@ -225,9 +225,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./core/add-header.interceptors */ 9643);
 /* harmony import */ var _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./core/log-response.interceptors */ 2921);
 /* harmony import */ var _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./core/cache.interceptor */ 7354);
-/* harmony import */ var _component_login_component_login_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./component/login-component/login.component */ 376);
+/* harmony import */ var _component_login_component_login_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./component/login-component/login.component */ 5376);
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./service/auth.service */ 892);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _component_profile_component_profile_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./component/profile-component/profile.component */ 7270);
+
 
 
 
@@ -248,12 +250,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const route = [
-    { path: 'login', component: _component_login_component_login_component__WEBPACK_IMPORTED_MODULE_11__.LoginComponent }
+    { path: 'login', component: _component_login_component_login_component__WEBPACK_IMPORTED_MODULE_11__.LoginComponent },
+    { path: 'profile', component: _component_profile_component_profile_component__WEBPACK_IMPORTED_MODULE_13__.ProfileComponent }
 ];
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_13__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_14__.NgModule)({
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_15__.NgModule)({
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent,
             _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_4__.DashboardComponent,
@@ -261,21 +264,23 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_13__.__decorate)([
             _edit_reader_edit_reader_component__WEBPACK_IMPORTED_MODULE_6__.EditReaderComponent,
             _edit_book_edit_book_component__WEBPACK_IMPORTED_MODULE_5__.EditBookComponent,
             _add_reader_add_reader_component__WEBPACK_IMPORTED_MODULE_1__.AddReaderComponent,
-            _component_login_component_login_component__WEBPACK_IMPORTED_MODULE_11__.LoginComponent
+            _component_login_component_login_component__WEBPACK_IMPORTED_MODULE_11__.LoginComponent,
+            _component_profile_component_profile_component__WEBPACK_IMPORTED_MODULE_13__.ProfileComponent
         ],
         providers: [
-            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_14__.ErrorHandler, useClass: _core_book_tracker_error_handler_service__WEBPACK_IMPORTED_MODULE_7__.BookTrackerErrorHandlerService },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_15__.HTTP_INTERCEPTORS, useClass: _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__.AddHeaderInterceptor, multi: true },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_15__.HTTP_INTERCEPTORS, useClass: _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__.LogResponseInterceptor, multi: true },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_15__.HTTP_INTERCEPTORS, useClass: _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__.CacheInterceptor, multi: true },
+            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_15__.ErrorHandler, useClass: _core_book_tracker_error_handler_service__WEBPACK_IMPORTED_MODULE_7__.BookTrackerErrorHandlerService },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_16__.HTTP_INTERCEPTORS, useClass: _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__.AddHeaderInterceptor, multi: true },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_16__.HTTP_INTERCEPTORS, useClass: _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__.LogResponseInterceptor, multi: true },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_16__.HTTP_INTERCEPTORS, useClass: _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__.CacheInterceptor, multi: true },
             _service_auth_service__WEBPACK_IMPORTED_MODULE_12__.AuthService
         ],
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_16__.BrowserModule,
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__.BrowserModule,
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__.AppRoutingModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_17__.FormsModule,
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_15__.HttpClientModule,
-            _angular_router__WEBPACK_IMPORTED_MODULE_18__.RouterModule.forRoot(route)
+            _angular_forms__WEBPACK_IMPORTED_MODULE_18__.FormsModule,
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_16__.HttpClientModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_18__.ReactiveFormsModule,
+            _angular_router__WEBPACK_IMPORTED_MODULE_19__.RouterModule.forRoot(route)
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent]
     })
@@ -285,7 +290,7 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_13__.__decorate)([
 
 /***/ }),
 
-/***/ 376:
+/***/ 5376:
 /*!**************************************************************!*\
   !*** ./src/app/component/login-component/login.component.ts ***!
   \**************************************************************/
@@ -297,8 +302,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "LoginComponent": () => (/* binding */ LoginComponent)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_login_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./login.component.html */ 155);
-/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgICAgICA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgICAgICA= */ 600);
+/* harmony import */ var _raw_loader_login_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./login.component.html */ 8155);
+/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgICAgICA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgICAgICA= */ 2600);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service/auth.service */ 892);
@@ -332,6 +337,76 @@ LoginComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
         styles: [data_text_css_charset_utf_8_base64_CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgICAgICA___WEBPACK_IMPORTED_MODULE_1__.default]
     })
 ], LoginComponent);
+
+
+
+/***/ }),
+
+/***/ 7270:
+/*!******************************************************************!*\
+  !*** ./src/app/component/profile-component/profile.component.ts ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ProfileComponent": () => (/* binding */ ProfileComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _raw_loader_profile_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./profile.component.html */ 5250);
+/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgIC5lcnJvcntiYWNrZ3JvdW5kOiNmZWNhY2F9CiAgICA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgIC5lcnJvcntiYWNrZ3JvdW5kOiNmZWNhY2F9CiAgICA= */ 864);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var app_service_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/service/auth.service */ 892);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 9895);
+
+
+
+
+
+
+
+let ProfileComponent = class ProfileComponent {
+    constructor(authService, router) {
+        this.authService = authService;
+        this.router = router;
+    }
+    ngOnInit() {
+        this.firstName = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControl(this.authService.currentUser.firstName, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required);
+        this.lastName = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControl(this.authService.currentUser.lastName, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required);
+        this.profileForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroup({
+            firstName: this.firstName,
+            lastName: this.lastName
+        });
+    }
+    isValidLastName() {
+        return this.lastName.valid || this.lastName.touched;
+    }
+    isValidFirstName() {
+        return this.firstName.valid || this.firstName.touched;
+    }
+    save(profile) {
+        if (this.profileForm.valid) {
+            this.authService.updateCurrentUser(profile);
+            this.router.navigate(['dashboard']);
+        }
+    }
+    cancel() {
+        this.router.navigate(['dashboard']);
+    }
+};
+ProfileComponent.ctorParameters = () => [
+    { type: app_service_auth_service__WEBPACK_IMPORTED_MODULE_2__.AuthService },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router }
+];
+ProfileComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+        selector: 'app-profile-component',
+        template: _raw_loader_profile_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
+        styles: [data_text_css_charset_utf_8_base64_CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgIC5lcnJvcntiYWNrZ3JvdW5kOiNmZWNhY2F9CiAgICA___WEBPACK_IMPORTED_MODULE_1__.default]
+    })
+], ProfileComponent);
 
 
 
@@ -991,6 +1066,10 @@ let AuthService = class AuthService {
     isLoggedIn() {
         return !!this.currentUser;
     }
+    updateCurrentUser(profile) {
+        this.currentUser.lastName = profile.lastName;
+        this.currentUser.firstName = profile.firstName;
+    }
 };
 AuthService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)()
@@ -1068,7 +1147,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 600:
+/***/ 864:
+/*!***********************************************************************************************************************************************!*\
+  !*** data:text/css;charset=utf-8;base64,CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgIC5lcnJvcntiYWNrZ3JvdW5kOiNmZWNhY2F9CiAgICA= ***!
+  \***********************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n        em{float:right;color:red}\n        .error{background:#fecaca}\n    \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNzcztjaGFyc2V0PXV0Zi04O2Jhc2U2NCxDaUFnSUNBZ0lDQWdaVzE3Wm14dllYUTZjbWxuYUhRN1kyOXNiM0k2Y21Wa2ZRb2dJQ0FnSUNBZ0lDNWxjbkp2Y250aVlXTnJaM0p2ZFc1a09pTm1aV05oWTJGOUNpQWdJQ0E9Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7UUFDUSxHQUFHLFdBQVcsQ0FBQyxTQUFTO1FBQ3hCLE9BQU8sa0JBQWtCIiwiZmlsZSI6ImNzcztjaGFyc2V0PXV0Zi04O2Jhc2U2NCxDaUFnSUNBZ0lDQWdaVzE3Wm14dllYUTZjbWxuYUhRN1kyOXNiM0k2Y21Wa2ZRb2dJQ0FnSUNBZ0lDNWxjbkp2Y250aVlXTnJaM0p2ZFc1a09pTm1aV05oWTJGOUNpQWdJQ0E9Iiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgIGVte2Zsb2F0OnJpZ2h0O2NvbG9yOnJlZH1cbiAgICAgICAgLmVycm9ye2JhY2tncm91bmQ6I2ZlY2FjYX1cbiAgICAiXX0= */");
+
+/***/ }),
+
+/***/ 2600:
 /*!***********************************************************************************************************!*\
   !*** data:text/css;charset=utf-8;base64,CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgICAgICA= ***!
   \***********************************************************************************************************/
@@ -1124,11 +1218,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<nav class=\"navbar navbar-default\">\r\n    <div class=\"container-fluid\">\r\n        <!-- Brand and toggle get grouped for better mobile display -->\r\n        <div class=\"navbar-header\">\r\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\"\r\n                data-target=\"#bs-example-navbar-collapse-1\">\r\n                <span class=\"sr-only\">Toggle navigation</span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n            </button>\r\n            <a class=\"navbar-brand\" [routerLink]=\"['/dashboard']\">Book Tracker</a>\r\n        </div>\r\n\r\n        <!-- Collect the nav links, forms, and other content for toggling -->\r\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n            <ul class=\"nav navbar-nav\">\r\n                <li><a [routerLink]=\"['/addbook']\">Add Book<span class=\"sr-only\">(current)</span></a></li>\r\n                <li><a [routerLink]=\"['/addreader']\">Add Reader</a></li>\r\n                <div *ngIf=\"!authService.isLoggedIn()\"><a [routerLink]=\"['login']\">Login</a></div>\r\n                <div *ngIf=\"authService.isLoggedIn()\">Welcome {{authService.currentUser.userName}}</div>\r\n            </ul>\r\n        </div><!-- /.navbar-collapse -->\r\n    </div><!-- /.container-fluid -->\r\n</nav>\r\n\r\n<router-outlet></router-outlet>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<nav class=\"navbar navbar-default\">\r\n    <div class=\"container-fluid\">\r\n        <!-- Brand and toggle get grouped for better mobile display -->\r\n        <div class=\"navbar-header\">\r\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\"\r\n                data-target=\"#bs-example-navbar-collapse-1\">\r\n                <span class=\"sr-only\">Toggle navigation</span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n            </button>\r\n            <a class=\"navbar-brand\" [routerLink]=\"['/dashboard']\">Book Tracker</a>\r\n        </div>\r\n\r\n        <!-- Collect the nav links, forms, and other content for toggling -->\r\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n            <ul class=\"nav navbar-nav\">\r\n                <li><a [routerLink]=\"['/addbook']\">Add Book<span class=\"sr-only\">(current)</span></a></li>\r\n                <li><a [routerLink]=\"['/addreader']\">Add Reader</a></li>\r\n\r\n                <li><div *ngIf=\"!authService.isLoggedIn()\"><a [routerLink]=\"['login']\">Login</a></div></li>\r\n                <li><div *ngIf=\"authService.isLoggedIn()\"><a [routerLink]=\"['profile']\">Welcome {{authService.currentUser.userName}}</a></div></li>\r\n                <!-- <li><div ><a [routerLink]=\"['profile']\">Profile</a></div></li> -->\r\n            </ul>\r\n        </div><!-- /.navbar-collapse -->\r\n    </div><!-- /.container-fluid -->\r\n</nav>\r\n\r\n<router-outlet></router-outlet>");
 
 /***/ }),
 
-/***/ 155:
+/***/ 8155:
 /*!******************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/component/login-component/login.component.html ***!
   \******************************************************************************************************/
@@ -1140,6 +1234,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<h1>Login</h1>\r\n<hr />\r\n<div class=\"col-md-4\">\r\n    <form #loginForm=\"ngForm\" (ngSubmit)=\"login(loginForm.value)\">\r\n        <div class=\"form-group\">\r\n            <label for=\"userName\">User Name:</label>\r\n            <em *ngIf=\"(loginForm.controls.userName?.invalid && loginForm.controls.userName?.touched || mouseOverLogin)\">Required</em>\r\n            <input (ngModel)=\"userName\" id=\"userName\" name=\"userName\" type=\"text\" class=\"form-control\"\r\n                placeholder=\"User Name...\" required />\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label for=\"password\">Password:</label>\r\n            <em *ngIf=\"(loginForm.controls.password?.invalid && loginForm.controls.password?.touched || mouseOverLogin)\">Required</em>\r\n            <input (ngModel)=\"password\" id=\"password\" name=\"password\" type=\"password\" class=\"form-control\"\r\n                placeholder=\"Password...\" required />\r\n        </div>\r\n\r\n        <span (mouseover)=\"mouseOverLogin=true\" (mouseleave)=\"mouseOverLogin=false\">\r\n            <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"loginForm.invalid\">Login</button>\r\n            <button type=\"button\" class=\"btn btn-default\" [routerLink]=\"['/dashboard']\">Cancel</button>\r\n        </span>\r\n    </form>\r\n</div>");
+
+/***/ }),
+
+/***/ 5250:
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/component/profile-component/profile.component.html ***!
+  \**********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div>\r\n    <h1>Edit Your Profile </h1>\r\n    <hr>\r\n    <div class=\"col-md-4\">\r\n        <form autocomplete=\"off\" [formGroup]=\"profileForm\" novalidate (ngSubmit)=\"save(profileForm.value)\">\r\n            <div class=\"form-group\">\r\n                <label for=\"firstName\">First Name:</label>\r\n                <em *ngIf=\"!isValidFirstName()\">Required</em>\r\n                <input id=\"firstName\" formControlName=\"firstName\" type=\"text\" class=\"form-control\"\r\n                    placeholder=\"First Name...\" [ngClass]=\"{'error' : !isValidFirstName()}\" />\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"lastName\">Last Name:</label>\r\n                <em *ngIf=\"!isValidLastName()\">Required</em>\r\n                <input id=\"lastName\" formControlName=\"lastName\" type=\"text\" class=\"form-control\"\r\n                    placeholder=\"Last Name...\" [ngClass]=\"{'error' : !isValidLastName()}\" />\r\n            </div>\r\n\r\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n            <button type=\"button\" class=\"btn btn-default\" (click)=\"cancel()\">Cancel</button>\r\n        </form>\r\n    </div>\r\n</div>");
 
 /***/ }),
 
