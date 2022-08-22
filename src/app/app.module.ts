@@ -15,6 +15,13 @@ import { BookTrackerErrorHandlerService } from './core/book-tracker-error-handle
 import { AddHeaderInterceptor } from './core/add-header.interceptors';
 import { LogResponseInterceptor } from './core/log-response.interceptors';
 import { CacheInterceptor } from './core/cache.interceptor';
+import { LoginComponent } from './component/login-component/login.component';
+import { AuthService } from './service/auth.service';
+import { RouterModule, Routes } from '@angular/router';
+
+const route: Routes = [
+  { path: 'login', component: LoginComponent }
+]
 
 @NgModule({
   declarations: [
@@ -23,19 +30,22 @@ import { CacheInterceptor } from './core/cache.interceptor';
     AddBookComponent,
     EditReaderComponent,
     EditBookComponent,
-    AddReaderComponent
+    AddReaderComponent,
+    LoginComponent
   ],
   providers: [
     { provide: ErrorHandler, useClass: BookTrackerErrorHandlerService },
     { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LogResponseInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true },
+    AuthService
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(route)
   ],
   bootstrap: [AppComponent]
 })
