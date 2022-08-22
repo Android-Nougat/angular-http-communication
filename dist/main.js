@@ -296,11 +296,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LoginComponent": () => (/* binding */ LoginComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_login_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./login.component.html */ 155);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../service/auth.service */ 892);
+/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgICAgICA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgICAgICA= */ 600);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service/auth.service */ 892);
+
 
 
 
@@ -320,13 +322,14 @@ let LoginComponent = class LoginComponent {
     }
 };
 LoginComponent.ctorParameters = () => [
-    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_1__.AuthService },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router }
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_2__.AuthService },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router }
 ];
-LoginComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+LoginComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
         selector: "app-login-component",
-        template: _raw_loader_login_component_html__WEBPACK_IMPORTED_MODULE_0__.default
+        template: _raw_loader_login_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
+        styles: [data_text_css_charset_utf_8_base64_CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgICAgICA___WEBPACK_IMPORTED_MODULE_1__.default]
     })
 ], LoginComponent);
 
@@ -1065,6 +1068,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 600:
+/*!***********************************************************************************************************!*\
+  !*** data:text/css;charset=utf-8;base64,CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgICAgICA= ***!
+  \***********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n        em{float:right;color:red}\n            \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNzcztjaGFyc2V0PXV0Zi04O2Jhc2U2NCxDaUFnSUNBZ0lDQWdaVzE3Wm14dllYUTZjbWxuYUhRN1kyOXNiM0k2Y21Wa2ZRb2dJQ0FnSUNBZ0lDQWdJQ0E9Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7UUFDUSxHQUFHLFdBQVcsQ0FBQyxTQUFTIiwiZmlsZSI6ImNzcztjaGFyc2V0PXV0Zi04O2Jhc2U2NCxDaUFnSUNBZ0lDQWdaVzE3Wm14dllYUTZjbWxuYUhRN1kyOXNiM0k2Y21Wa2ZRb2dJQ0FnSUNBZ0lDQWdJQ0E9Iiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgIGVte2Zsb2F0OnJpZ2h0O2NvbG9yOnJlZH1cbiAgICAgICAgICAgICJdfQ== */");
+
+/***/ }),
+
 /***/ 7052:
 /*!****************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/add-book/add-book.component.html ***!
@@ -1121,7 +1139,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<h1>Login</h1>\r\n<hr />\r\n<div class=\"col-md-4\">\r\n  <form #loginForm=\"ngForm\" (ngSubmit)=\"login(loginForm.value)\">\r\n    <div class=\"form-group\">\r\n      <label for=\"userName\">User Name:</label>\r\n      <input\r\n        (ngModel)=\"userName\"\r\n        id=\"userName\"\r\n        name=\"userName\"\r\n        type=\"text\"\r\n        class=\"form-control\"\r\n        placeholder=\"User Name...\"\r\n      />\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"password\">Password:</label>\r\n      <input\r\n        (ngModel)=\"password\"\r\n        id=\"password\"\r\n        name=\"password\"\r\n        type=\"password\"\r\n        class=\"form-control\"\r\n        placeholder=\"Password...\"\r\n      />\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-primary\">Login</button>\r\n    <button type=\"button\" class=\"btn btn-default\" [routerLink]=\"['/dashboard']\">Cancel</button>\r\n  </form>\r\n</div>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<h1>Login</h1>\r\n<hr />\r\n<div class=\"col-md-4\">\r\n    <form #loginForm=\"ngForm\" (ngSubmit)=\"login(loginForm.value)\">\r\n        <div class=\"form-group\">\r\n            <label for=\"userName\">User Name:</label>\r\n            <em *ngIf=\"(loginForm.controls.userName?.invalid && loginForm.controls.userName?.touched || mouseOverLogin)\">Required</em>\r\n            <input (ngModel)=\"userName\" id=\"userName\" name=\"userName\" type=\"text\" class=\"form-control\"\r\n                placeholder=\"User Name...\" required />\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label for=\"password\">Password:</label>\r\n            <em *ngIf=\"(loginForm.controls.password?.invalid && loginForm.controls.password?.touched || mouseOverLogin)\">Required</em>\r\n            <input (ngModel)=\"password\" id=\"password\" name=\"password\" type=\"password\" class=\"form-control\"\r\n                placeholder=\"Password...\" required />\r\n        </div>\r\n\r\n        <span (mouseover)=\"mouseOverLogin=true\" (mouseleave)=\"mouseOverLogin=false\">\r\n            <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"loginForm.invalid\">Login</button>\r\n            <button type=\"button\" class=\"btn btn-default\" [routerLink]=\"['/dashboard']\">Cancel</button>\r\n        </span>\r\n    </form>\r\n</div>");
 
 /***/ }),
 
