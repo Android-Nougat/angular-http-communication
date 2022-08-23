@@ -20,6 +20,9 @@ import { AuthService } from './service/auth.service';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './component/profile-component/profile.component';
 
+import {MasterService} from './core/master.service';
+import {ValueService} from './core/value.service';
+
 const route: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent }
@@ -41,7 +44,9 @@ const route: Routes = [
     { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LogResponseInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true },
-    AuthService
+    AuthService,
+    MasterService,
+    ValueService
   ],
   imports: [
     BrowserModule,
