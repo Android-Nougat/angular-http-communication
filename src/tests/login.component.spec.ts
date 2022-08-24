@@ -24,4 +24,13 @@ describe('login compoentn', () => {
         loginComponent.login(user);
         expect(authService.currentUser.userName).toBe(user.userName);
     })
+    it('check logged in', () => {
+        expect(authService.isLoggedIn()).toBe(false);
+    });
+
+    // it('test using jasmine spy', () => {
+    //     let authServiceSpy = jasmine.createSpyObj('AuthService',['isLoggedIn']);
+    //     loginComponent.login(user);
+    //     expect(authServiceSpy.isLoggedIn).toBe(true);
+    // })
 })
