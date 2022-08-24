@@ -11,6 +11,6 @@ describe("demo of jasmine", () => {
 
     masterService = new MasterService(valueServiceSpy);
 
-    expect(masterService.getValue()).toBe(stubValue);
+    expect(masterService.getMainValue()).toBe(stubValue);
   });
 });

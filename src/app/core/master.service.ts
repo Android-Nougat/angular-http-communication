@@ -6,7 +6,7 @@ import { ValueService } from "./value.service";
 export class MasterService {
   constructor(private valueService: ValueService) {}
 
-  getValue() {
+  getMainValue() {
     return this.valueService.getValue();
   }
 }
