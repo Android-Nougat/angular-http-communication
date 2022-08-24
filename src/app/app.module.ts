@@ -16,6 +16,7 @@ import { AddHeaderInterceptor } from './core/add-header.interceptors';
 import { LogResponseInterceptor } from './core/log-response.interceptors';
 import { CacheInterceptor } from './core/cache.interceptor';
 import { LoginComponent } from './component/login-component/login.component';
+import {LightSwitchComponent} from './component/light-switch.component';
 import { AuthService } from './service/auth.service';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './component/profile-component/profile.component';
@@ -37,7 +38,8 @@ const route: Routes = [
     EditBookComponent,
     AddReaderComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    LightSwitchComponent
   ],
   providers: [
     { provide: ErrorHandler, useClass: BookTrackerErrorHandlerService },
