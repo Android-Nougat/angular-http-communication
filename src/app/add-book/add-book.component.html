@@ -1,29 +1,32 @@
 <div class="col-lg-5">
   <div class="well bs-component">
-    <form #addBookForm="ngForm" (ngSubmit)="saveBook(addBookForm.value)" class="form-horizontal">
+    <form [formGroup]="bookForm" (ngSubmit)="saveBook(bookForm.value)" class="form-horizontal">
       <fieldset>
         <legend>Add New Book</legend>
         <div class="form-group">
           <label for="inputTitle" class="col-lg-3 control-label">Title</label>
+          <em *ngIf="bookForm.invalid && title.touched && bookForm.controls.title.errors.required">Required</em>
           <div class="col-lg-8">
-            <input type="text" class="form-control" id="inputTitle" placeholder="Title" name="title" ngModel>
+            <input type="text" class="form-control" id="inputTitle" placeholder="Title" formControlName="title" name="title" >
           </div>
         </div>
         <div class="form-group">
           <label for="inputAuthor" class="col-lg-3 control-label">Author</label>
+          <em *ngIf="bookForm.invalid && author.touched && bookForm.controls.author.errors.required">Required</em>
           <div class="col-lg-8">
-            <input type="text" class="form-control" id="inputAuthor" placeholder="Author" name="author" ngModel>
+            <input type="text" class="form-control" id="inputAuthor" placeholder="Author" formControlName="author" name="author" >
           </div>
         </div>
         <div class="form-group">
           <label for="inputYear" class="col-lg-3 control-label">Year</label>
+          <em *ngIf="bookForm.invalid && publicationYear.touched && bookForm.controls.publicationYear.errors.required">Required</em>
           <div class="col-lg-8">
-            <input type="text" class="form-control" id="inputYear" placeholder="Year Published" name="publicationYear" ngModel>
+            <input type="text" class="form-control" id="inputYear" placeholder="Year Published" formControlName="publicationYear" name="publicationYear" >
           </div>
         </div>
         <div class="form-group">
           <div class="col-lg-8 col-lg-offset-3">
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid">Save</button>
           </div>
         </div>
       </fieldset>

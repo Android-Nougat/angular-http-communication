@@ -33,10 +33,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AddBookComponent": () => (/* binding */ AddBookComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_add_book_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./add-book.component.html */ 7052);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _core_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core/data.service */ 3943);
+/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICBlbXtmbG9hdDpyaWdodDtjb2xvcjpyZWR9CiAgICA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICBlbXtmbG9hdDpyaWdodDtjb2xvcjpyZWR9CiAgICA= */ 352);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var _core_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../core/data.service */ 3943);
+
+
 
 
 
@@ -45,7 +49,16 @@ let AddBookComponent = class AddBookComponent {
     constructor(dataService) {
         this.dataService = dataService;
     }
-    ngOnInit() { }
+    ngOnInit() {
+        this.title = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required);
+        this.author = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required);
+        this.publicationYear = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControl(0, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.pattern('[0-9]*')]);
+        this.bookForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroup({
+            title: this.title,
+            publicationYear: this.publicationYear,
+            author: this.author
+        });
+    }
     saveBook(formValues) {
         let newBook = formValues;
         newBook.bookID = 0;
@@ -54,12 +67,13 @@ let AddBookComponent = class AddBookComponent {
     }
 };
 AddBookComponent.ctorParameters = () => [
-    { type: _core_data_service__WEBPACK_IMPORTED_MODULE_1__.DataService }
+    { type: _core_data_service__WEBPACK_IMPORTED_MODULE_2__.DataService }
 ];
-AddBookComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+AddBookComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
         selector: 'app-add-book',
-        template: _raw_loader_add_book_component_html__WEBPACK_IMPORTED_MODULE_0__.default
+        template: _raw_loader_add_book_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
+        styles: [data_text_css_charset_utf_8_base64_CiAgICBlbXtmbG9hdDpyaWdodDtjb2xvcjpyZWR9CiAgICA___WEBPACK_IMPORTED_MODULE_1__.default]
     })
 ], AddBookComponent);
 
@@ -1329,6 +1343,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 352:
+/*!*******************************************************************************************!*\
+  !*** data:text/css;charset=utf-8;base64,CiAgICBlbXtmbG9hdDpyaWdodDtjb2xvcjpyZWR9CiAgICA= ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n    em{float:right;color:red}\n    \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNzcztjaGFyc2V0PXV0Zi04O2Jhc2U2NCxDaUFnSUNCbGJYdG1iRzloZERweWFXZG9kRHRqYjJ4dmNqcHlaV1I5Q2lBZ0lDQT0iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtJQUNJLEdBQUcsV0FBVyxDQUFDLFNBQVMiLCJmaWxlIjoiY3NzO2NoYXJzZXQ9dXRmLTg7YmFzZTY0LENpQWdJQ0JsYlh0bWJHOWhkRHB5YVdkb2REdGpiMnh2Y2pweVpXUjlDaUFnSUNBPSIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgIGVte2Zsb2F0OnJpZ2h0O2NvbG9yOnJlZH1cbiAgICAiXX0= */");
+
+/***/ }),
+
 /***/ 7052:
 /*!****************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/add-book/add-book.component.html ***!
@@ -1340,7 +1369,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div class=\"col-lg-5\">\r\n  <div class=\"well bs-component\">\r\n    <form #addBookForm=\"ngForm\" (ngSubmit)=\"saveBook(addBookForm.value)\" class=\"form-horizontal\">\r\n      <fieldset>\r\n        <legend>Add New Book</legend>\r\n        <div class=\"form-group\">\r\n          <label for=\"inputTitle\" class=\"col-lg-3 control-label\">Title</label>\r\n          <div class=\"col-lg-8\">\r\n            <input type=\"text\" class=\"form-control\" id=\"inputTitle\" placeholder=\"Title\" name=\"title\" ngModel>\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label for=\"inputAuthor\" class=\"col-lg-3 control-label\">Author</label>\r\n          <div class=\"col-lg-8\">\r\n            <input type=\"text\" class=\"form-control\" id=\"inputAuthor\" placeholder=\"Author\" name=\"author\" ngModel>\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label for=\"inputYear\" class=\"col-lg-3 control-label\">Year</label>\r\n          <div class=\"col-lg-8\">\r\n            <input type=\"text\" class=\"form-control\" id=\"inputYear\" placeholder=\"Year Published\" name=\"publicationYear\" ngModel>\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <div class=\"col-lg-8 col-lg-offset-3\">\r\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n          </div>\r\n        </div>\r\n      </fieldset>\r\n    </form>\r\n  </div>\r\n</div>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div class=\"col-lg-5\">\r\n  <div class=\"well bs-component\">\r\n    <form [formGroup]=\"bookForm\" (ngSubmit)=\"saveBook(bookForm.value)\" class=\"form-horizontal\">\r\n      <fieldset>\r\n        <legend>Add New Book</legend>\r\n        <div class=\"form-group\">\r\n          <label for=\"inputTitle\" class=\"col-lg-3 control-label\">Title</label>\r\n          <em *ngIf=\"bookForm.invalid && title.touched && bookForm.controls.title.errors.required\">Required</em>\r\n          <div class=\"col-lg-8\">\r\n            <input type=\"text\" class=\"form-control\" id=\"inputTitle\" placeholder=\"Title\" formControlName=\"title\" name=\"title\" >\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label for=\"inputAuthor\" class=\"col-lg-3 control-label\">Author</label>\r\n          <em *ngIf=\"bookForm.invalid && author.touched && bookForm.controls.author.errors.required\">Required</em>\r\n          <div class=\"col-lg-8\">\r\n            <input type=\"text\" class=\"form-control\" id=\"inputAuthor\" placeholder=\"Author\" formControlName=\"author\" name=\"author\" >\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label for=\"inputYear\" class=\"col-lg-3 control-label\">Year</label>\r\n          <em *ngIf=\"bookForm.invalid && publicationYear.touched && bookForm.controls.publicationYear.errors.required\">Required</em>\r\n          <div class=\"col-lg-8\">\r\n            <input type=\"text\" class=\"form-control\" id=\"inputYear\" placeholder=\"Year Published\" formControlName=\"publicationYear\" name=\"publicationYear\" >\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <div class=\"col-lg-8 col-lg-offset-3\">\r\n            <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"bookForm.invalid\">Save</button>\r\n          </div>\r\n        </div>\r\n      </fieldset>\r\n    </form>\r\n  </div>\r\n</div>");
 
 /***/ }),
 
