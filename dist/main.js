@@ -319,7 +319,6 @@ let LoginComponent = class LoginComponent {
         this.router = router;
     }
     ngOnInit() {
-        // throw new Error("Method not implemented.");
     }
     login(value) {
         this.authService.login(value.userName, value.password);
@@ -355,7 +354,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_profile_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./profile.component.html */ 5250);
-/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgIC5lcnJvcntiYWNrZ3JvdW5kOiNmZWNhY2F9CiAgICA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgIC5lcnJvcntiYWNrZ3JvdW5kOiNmZWNhY2F9CiAgICA= */ 864);
+/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgIC5lcnJvcntiYWNrZ3JvdW5kOiNmZWNhY2F9CiAgICA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgIC5lcnJvcntiYWNrZ3JvdW5kOiNmZWNhY2F9CiAgICA= */ 8864);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 3679);
 /* harmony import */ var app_service_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/service/auth.service */ 892);
@@ -373,7 +372,7 @@ let ProfileComponent = class ProfileComponent {
         this.router = router;
     }
     ngOnInit() {
-        this.firstName = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControl(this.authService.currentUser.firstName, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.pattern('[a-zA-Z]*')]);
+        this.firstName = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControl(this.authService.currentUser.firstName, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.pattern('[a-zA-Z]*'), this.restrictedWords(['foo', 'war'])]);
         this.lastName = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControl(this.authService.currentUser.lastName, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required);
         this.profileForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroup({
             firstName: this.firstName,
@@ -381,10 +380,10 @@ let ProfileComponent = class ProfileComponent {
         });
     }
     isValidLastName() {
-        return this.lastName.valid || this.lastName.touched;
+        return this.lastName.valid || this.lastName.untouched;
     }
     isValidFirstName() {
-        return this.firstName.valid || this.firstName.touched;
+        return this.firstName.valid || this.firstName.untouched;
     }
     save(profile) {
         if (this.profileForm.valid) {
@@ -394,6 +393,27 @@ let ProfileComponent = class ProfileComponent {
     }
     cancel() {
         this.router.navigate(['dashboard']);
+    }
+    // private restrictedWords(control: FormControl): { [key: string]: any } {
+    //     return control.value.includes('foo') ?
+    //         { 'restrictedWords': 'foo' } : null;
+    // }
+    restrictedWords(values) {
+        console.log(values);
+        return (control) => {
+            let containsRestrincted = values.map((value) => {
+                console.log('value = ', value);
+                console.log('check = ', control.value.includes(value));
+                // return control.value.includes(value) ? value : null;
+                if (control.value.includes(value))
+                    return value;
+                return null;
+            });
+            console.log(containsRestrincted);
+            containsRestrincted = containsRestrincted.filter(item => item !== null);
+            return containsRestrincted && containsRestrincted.length > 0 ?
+                { 'restrictedWords': containsRestrincted } : null;
+        };
     }
 };
 ProfileComponent.ctorParameters = () => [
@@ -1147,7 +1167,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 864:
+/***/ 8864:
 /*!***********************************************************************************************************************************************!*\
   !*** data:text/css;charset=utf-8;base64,CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgIC5lcnJvcntiYWNrZ3JvdW5kOiNmZWNhY2F9CiAgICA= ***!
   \***********************************************************************************************************************************************/
@@ -1233,7 +1253,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<h1>Login</h1>\r\n<hr />\r\n<div class=\"col-md-4\">\r\n    <form #loginForm=\"ngForm\" (ngSubmit)=\"login(loginForm.value)\">\r\n        <div class=\"form-group\">\r\n            <label for=\"userName\">User Name:</label>\r\n            <em *ngIf=\"(loginForm.controls.userName?.invalid && loginForm.controls.userName?.touched || mouseOverLogin)\">Required</em>\r\n            <input (ngModel)=\"userName\" id=\"userName\" name=\"userName\" type=\"text\" class=\"form-control\"\r\n                placeholder=\"User Name...\" required />\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label for=\"password\">Password:</label>\r\n            <em *ngIf=\"(loginForm.controls.password?.invalid && loginForm.controls.password?.touched || mouseOverLogin)\">Required</em>\r\n            <input (ngModel)=\"password\" id=\"password\" name=\"password\" type=\"password\" class=\"form-control\"\r\n                placeholder=\"Password...\" required />\r\n        </div>\r\n\r\n        <span (mouseover)=\"mouseOverLogin=true\" (mouseleave)=\"mouseOverLogin=false\">\r\n            <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"loginForm.invalid\">Login</button>\r\n            <button type=\"button\" class=\"btn btn-default\" [routerLink]=\"['/dashboard']\">Cancel</button>\r\n        </span>\r\n    </form>\r\n</div>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<h1>Login</h1>\r\n<hr />\r\n<div class=\"col-md-4\">\r\n    <form #loginForm=\"ngForm\" (ngSubmit)=\"login(loginForm.value)\">\r\n        <div class=\"form-group\">\r\n            <label for=\"userName\">User Name:</label>\r\n            <em *ngIf=\"(loginForm.controls.userName?.invalid && (loginForm.controls.userName?.touched || mouseOverLogin))\">Required</em>\r\n            <input (ngModel)=\"userName\" id=\"userName\" name=\"userName\" type=\"text\" class=\"form-control\"\r\n                placeholder=\"User Name...\" required />\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label for=\"password\">Password:</label>\r\n            <em *ngIf=\"(loginForm.controls.password?.invalid && (loginForm.controls.password?.touched || mouseOverLogin))\">Required</em>\r\n            <input (ngModel)=\"password\" id=\"password\" name=\"password\" type=\"password\" class=\"form-control\"\r\n                placeholder=\"Password...\" required />\r\n        </div>\r\n\r\n        <span (mouseover)=\"mouseOverLogin=true\" (mouseleave)=\"mouseOverLogin=false\">\r\n            <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"loginForm.invalid\">Login</button>\r\n            <button type=\"button\" class=\"btn btn-default\" [routerLink]=\"['/dashboard']\">Cancel</button>\r\n        </span>\r\n    </form>\r\n</div>");
 
 /***/ }),
 
@@ -1248,7 +1268,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div>\r\n    <h1>Edit Your Profile </h1>\r\n    <hr>\r\n    <div class=\"col-md-4\">\r\n        <form autocomplete=\"off\" [formGroup]=\"profileForm\" novalidate (ngSubmit)=\"save(profileForm.value)\">\r\n            <div class=\"form-group\">\r\n                <label for=\"firstName\">First Name:</label>\r\n                <em *ngIf=\"!isValidFirstName() && profileForm.controls.firstName.errors.required\">Required</em>\r\n                <em *ngIf=\"!isValidFirstName() && profileForm.controls.firstName.errors.pattern\">Enter Appropriate Value</em>\r\n                <input id=\"firstName\" formControlName=\"firstName\" type=\"text\" class=\"form-control\"\r\n                    placeholder=\"First Name...\" [ngClass]=\"{'error' : !isValidFirstName()}\" />\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"lastName\">Last Name:</label>\r\n                <input id=\"lastName\" formControlName=\"lastName\" type=\"text\" class=\"form-control\"\r\n                    placeholder=\"Last Name...\" [ngClass]=\"{'error' : !isValidLastName()}\" />\r\n            </div>\r\n\r\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n            <button type=\"button\" class=\"btn btn-default\" (click)=\"cancel()\">Cancel</button>\r\n        </form>\r\n    </div>\r\n</div>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div>\r\n    <h1>Edit Your Profile </h1>\r\n    <hr>\r\n    <div class=\"col-md-4\">\r\n        <form autocomplete=\"off\" [formGroup]=\"profileForm\" novalidate (ngSubmit)=\"save(profileForm.value)\">\r\n            <div class=\"form-group\">\r\n                <label for=\"firstName\">First Name:</label>\r\n                <em *ngIf=\"!isValidFirstName() && profileForm.controls.firstName.errors.required\">Required</em>\r\n                <em *ngIf=\"!isValidFirstName() && profileForm.controls.firstName.errors.pattern\">Enter Appropriate Value</em>\r\n                <em *ngIf=\"!isValidFirstName() && (profileForm.controls.firstName.errors.pattern || profileForm.controls.firstName.errors.restrictedWords)\">Restricted word {{profileForm.controls.firstName.errors.restrictedWords}}</em>\r\n                <input id=\"firstName\" formControlName=\"firstName\" type=\"text\" class=\"form-control\"\r\n                    placeholder=\"First Name...\" [ngClass]=\"{'error' : !isValidFirstName()}\" />\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"lastName\">Last Name:</label>\r\n                <input id=\"lastName\" formControlName=\"lastName\" type=\"text\" class=\"form-control\"\r\n                    placeholder=\"Last Name...\" [ngClass]=\"{'error' : !isValidLastName()}\" />\r\n            </div>\r\n\r\n            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n            <button type=\"button\" class=\"btn btn-default\" (click)=\"cancel()\">Cancel</button>\r\n        </form>\r\n    </div>\r\n</div>");
 
 /***/ }),
 

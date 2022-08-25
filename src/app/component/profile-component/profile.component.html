@@ -7,6 +7,7 @@
                 <label for="firstName">First Name:</label>
                 <em *ngIf="!isValidFirstName() && profileForm.controls.firstName.errors.required">Required</em>
                 <em *ngIf="!isValidFirstName() && profileForm.controls.firstName.errors.pattern">Enter Appropriate Value</em>
+                <em *ngIf="!isValidFirstName() && (profileForm.controls.firstName.errors.pattern || profileForm.controls.firstName.errors.restrictedWords)">Restricted word {{profileForm.controls.firstName.errors.restrictedWords}}</em>
                 <input id="firstName" formControlName="firstName" type="text" class="form-control"
                     placeholder="First Name..." [ngClass]="{'error' : !isValidFirstName()}" />
             </div>

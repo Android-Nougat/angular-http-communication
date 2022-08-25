@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
     constructor(public authService: AuthService, private router: Router) { }
 
     ngOnInit(): void {
-        this.firstName = new FormControl(this.authService.currentUser.firstName, [Validators.required,Validators.pattern('[a-zA-Z]*')]);
+        this.firstName = new FormControl(this.authService.currentUser.firstName, [Validators.required, Validators.pattern('[a-zA-Z]*'), this.restrictedWords(['foo', 'war'])]);
         this.lastName = new FormControl(this.authService.currentUser.lastName, Validators.required);
         this.profileForm = new FormGroup({
             firstName: this.firstName,
@@ -31,11 +31,11 @@ export class ProfileComponent implements OnInit {
     }
 
     isValidLastName() {
-        return this.lastName.valid || this.lastName.touched;
+        return this.lastName.valid || this.lastName.untouched;
     }
 
     isValidFirstName() {
-        return this.firstName.valid || this.firstName.touched;
+        return this.firstName.valid || this.firstName.untouched;
     }
 
     save(profile: ProfileInterface) {
@@ -47,6 +47,33 @@ export class ProfileComponent implements OnInit {
 
     cancel() {
         this.router.navigate(['dashboard']);
+    }
+
+    // private restrictedWords(control: FormControl): { [key: string]: any } {
+    //     return control.value.includes('foo') ?
+    //         { 'restrictedWords': 'foo' } : null;
+    // }
+
+    private restrictedWords(values: string[]) {
+
+        console.log(values)
+
+        return (control: FormControl): { [key: string]: any } => {
+
+            let containsRestrincted = values.map((value: string) => {
+                console.log('value = ', value);
+                console.log('check = ',control.value.includes(value))
+                // return control.value.includes(value) ? value : null;
+                if(control.value.includes(value))
+                return value;
+                return null;
+            });
+            console.log(containsRestrincted)
+            containsRestrincted = containsRestrincted.filter(item => item !== null);
+
+            return containsRestrincted && containsRestrincted.length > 0 ?
+                { 'restrictedWords': containsRestrincted } : null;
+        }
     }
 
 }
