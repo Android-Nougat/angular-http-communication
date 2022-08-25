@@ -19,6 +19,7 @@ import { LoginComponent } from './component/login-component/login.component';
 import { AuthService } from './service/auth.service';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './component/profile-component/profile.component';
+import { UpvoteComponent } from './component/upvote-component/upvote.component';
 
 const route: Routes = [
   { path: 'login', component: LoginComponent },
@@ -34,7 +35,8 @@ const route: Routes = [
     EditBookComponent,
     AddReaderComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    UpvoteComponent
   ],
   providers: [
     { provide: ErrorHandler, useClass: BookTrackerErrorHandlerService },

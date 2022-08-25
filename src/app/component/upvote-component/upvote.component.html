@@ -1,0 +1,7 @@
+<span *ngIf="user" (click) = "onClick()">
+    <span *ngIf="!voted">Upvote</span>
+    <span *ngIf="voted">Unvote</span>
+</span>
+<span>
+    {{count}}
+</span>

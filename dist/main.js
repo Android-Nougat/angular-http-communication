@@ -209,11 +209,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/forms */ 3679);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common/http */ 1841);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ 1841);
 /* harmony import */ var _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add-book/add-book.component */ 9884);
 /* harmony import */ var _add_reader_add_reader_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./add-reader/add-reader.component */ 4808);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ 5041);
@@ -227,8 +227,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./core/cache.interceptor */ 7354);
 /* harmony import */ var _component_login_component_login_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./component/login-component/login.component */ 5376);
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./service/auth.service */ 892);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/router */ 9895);
 /* harmony import */ var _component_profile_component_profile_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./component/profile-component/profile.component */ 7270);
+/* harmony import */ var _component_upvote_component_upvote_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./component/upvote-component/upvote.component */ 8150);
+
 
 
 
@@ -255,8 +257,8 @@ const route = [
 ];
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_15__.NgModule)({
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_15__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_16__.NgModule)({
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent,
             _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_4__.DashboardComponent,
@@ -265,22 +267,23 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__decorate)([
             _edit_book_edit_book_component__WEBPACK_IMPORTED_MODULE_5__.EditBookComponent,
             _add_reader_add_reader_component__WEBPACK_IMPORTED_MODULE_1__.AddReaderComponent,
             _component_login_component_login_component__WEBPACK_IMPORTED_MODULE_11__.LoginComponent,
-            _component_profile_component_profile_component__WEBPACK_IMPORTED_MODULE_13__.ProfileComponent
+            _component_profile_component_profile_component__WEBPACK_IMPORTED_MODULE_13__.ProfileComponent,
+            _component_upvote_component_upvote_component__WEBPACK_IMPORTED_MODULE_14__.UpvoteComponent
         ],
         providers: [
-            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_15__.ErrorHandler, useClass: _core_book_tracker_error_handler_service__WEBPACK_IMPORTED_MODULE_7__.BookTrackerErrorHandlerService },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_16__.HTTP_INTERCEPTORS, useClass: _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__.AddHeaderInterceptor, multi: true },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_16__.HTTP_INTERCEPTORS, useClass: _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__.LogResponseInterceptor, multi: true },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_16__.HTTP_INTERCEPTORS, useClass: _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__.CacheInterceptor, multi: true },
+            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_16__.ErrorHandler, useClass: _core_book_tracker_error_handler_service__WEBPACK_IMPORTED_MODULE_7__.BookTrackerErrorHandlerService },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HTTP_INTERCEPTORS, useClass: _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__.AddHeaderInterceptor, multi: true },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HTTP_INTERCEPTORS, useClass: _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__.LogResponseInterceptor, multi: true },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HTTP_INTERCEPTORS, useClass: _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__.CacheInterceptor, multi: true },
             _service_auth_service__WEBPACK_IMPORTED_MODULE_12__.AuthService
         ],
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__.BrowserModule,
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_18__.BrowserModule,
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__.AppRoutingModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_18__.FormsModule,
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_16__.HttpClientModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_18__.ReactiveFormsModule,
-            _angular_router__WEBPACK_IMPORTED_MODULE_19__.RouterModule.forRoot(route)
+            _angular_forms__WEBPACK_IMPORTED_MODULE_19__.FormsModule,
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HttpClientModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_19__.ReactiveFormsModule,
+            _angular_router__WEBPACK_IMPORTED_MODULE_20__.RouterModule.forRoot(route)
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent]
     })
@@ -407,6 +410,63 @@ ProfileComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
         styles: [data_text_css_charset_utf_8_base64_CiAgICAgICAgZW17ZmxvYXQ6cmlnaHQ7Y29sb3I6cmVkfQogICAgICAgIC5lcnJvcntiYWNrZ3JvdW5kOiNmZWNhY2F9CiAgICA___WEBPACK_IMPORTED_MODULE_1__.default]
     })
 ], ProfileComponent);
+
+
+
+/***/ }),
+
+/***/ 8150:
+/*!****************************************************************!*\
+  !*** ./src/app/component/upvote-component/upvote.component.ts ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "UpvoteComponent": () => (/* binding */ UpvoteComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _raw_loader_upvote_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./upvote.component.html */ 4580);
+/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgIA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgIA== */ 658);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var app_service_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/service/auth.service */ 892);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 5917);
+
+
+
+
+
+
+let UpvoteComponent = class UpvoteComponent {
+    constructor(authService) {
+        this.authService = authService;
+        this.vote = new _angular_core__WEBPACK_IMPORTED_MODULE_3__.EventEmitter();
+    }
+    ngOnInit() {
+        // this.authService;
+        (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.of)(this.authService.isLoggedIn()).subscribe((data) => this.user = data);
+    }
+    onClick() {
+        console.log("voted");
+        this.vote.emit({});
+    }
+};
+UpvoteComponent.ctorParameters = () => [
+    { type: app_service_auth_service__WEBPACK_IMPORTED_MODULE_2__.AuthService }
+];
+UpvoteComponent.propDecorators = {
+    count: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__.Input }],
+    voted: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__.Input }],
+    vote: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__.Output }]
+};
+UpvoteComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+        selector: "app-upvote",
+        template: _raw_loader_upvote_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
+        styles: [data_text_css_charset_utf_8_base64_CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgIA___WEBPACK_IMPORTED_MODULE_1__.default]
+    })
+], UpvoteComponent);
 
 
 
@@ -825,13 +885,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DashboardComponent": () => (/* binding */ DashboardComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_dashboard_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./dashboard.component.html */ 9306);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
 /* harmony import */ var app_core_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! app/core/data.service */ 3943);
 /* harmony import */ var app_models_bookTrackerError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/models/bookTrackerError */ 5582);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var app_service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/service/auth.service */ 892);
+
 
 
 
@@ -840,9 +902,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let DashboardComponent = class DashboardComponent {
-    constructor(dataService, title, route) {
+    constructor(dataService, title, authService, route) {
         this.dataService = dataService;
         this.title = title;
+        this.authService = authService;
         this.route = route;
     }
     ngOnInit() {
@@ -866,14 +929,33 @@ let DashboardComponent = class DashboardComponent {
     deleteReader(readerID) {
         console.warn(`Delete reader not yet implemented (readerID: ${readerID}).`);
     }
+    toggleVote(book) {
+        if (this.hasVoted) {
+            let index = book.voters.findIndex(voter => voter.readerID === this.authService.reader.readerID);
+            book.voters.splice(index, 1);
+        }
+        else {
+            book.voters.push(this.authService.reader);
+        }
+    }
+    hasVoted(book) {
+        if (this.authService.isLoggedIn()) {
+            // book.voters.includes(this)
+            let retrievedVoter = book.voters.filter(voter => this.authService.reader.readerID === voter.readerID)[0];
+            if (retrievedVoter)
+                return true;
+        }
+        return false;
+    }
 };
 DashboardComponent.ctorParameters = () => [
     { type: app_core_data_service__WEBPACK_IMPORTED_MODULE_1__.DataService },
-    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.Title },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute }
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__.Title },
+    { type: app_service_auth_service__WEBPACK_IMPORTED_MODULE_3__.AuthService },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute }
 ];
-DashboardComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+DashboardComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-dashboard',
         template: _raw_loader_dashboard_component_html__WEBPACK_IMPORTED_MODULE_0__.default
     })
@@ -901,12 +983,12 @@ const allReaders = [
     { readerID: 3, name: 'Lanier', weeklyReadingGoal: 140, totalMinutesRead: 600 }
 ];
 const allBooks = [
-    { bookID: 1, title: 'Goodnight Moon', author: 'Margaret Wise Brown', publicationYear: 1953 },
-    { bookID: 2, title: 'Winnie-the-Pooh', author: 'A. A. Milne', publicationYear: 1926 },
-    { bookID: 3, title: 'Where the Wild Things Are', author: 'Maurice Sendak', publicationYear: 1963 },
-    { bookID: 4, title: 'The Hobbit', author: 'J. R. R. Tolkien', publicationYear: 1937 },
-    { bookID: 5, title: 'Curious George', author: 'H. A. Rey', publicationYear: 1941 },
-    { bookID: 6, title: 'Alice\'s Adventures in Wonderland', author: 'Lewis Carroll', publicationYear: 1865 },
+    { bookID: 1, title: 'Goodnight Moon', author: 'Margaret Wise Brown', publicationYear: 1953, voters: allReaders },
+    { bookID: 2, title: 'Winnie-the-Pooh', author: 'A. A. Milne', publicationYear: 1926, voters: [] },
+    { bookID: 3, title: 'Where the Wild Things Are', author: 'Maurice Sendak', publicationYear: 1963, voters: [] },
+    { bookID: 4, title: 'The Hobbit', author: 'J. R. R. Tolkien', publicationYear: 1937, voters: [] },
+    { bookID: 5, title: 'Curious George', author: 'H. A. Rey', publicationYear: 1941, voters: [] },
+    { bookID: 6, title: 'Alice\'s Adventures in Wonderland', author: 'Lewis Carroll', publicationYear: 1865, voters: [] },
 ];
 
 
@@ -1050,11 +1132,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthService": () => (/* binding */ AuthService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var app_core_data_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/core/data.service */ 3943);
+
 
 
 let AuthService = class AuthService {
+    constructor(dataService) {
+        this.dataService = dataService;
+    }
     login(userName, password) {
         this.currentUser = {
             userName: userName,
@@ -1062,6 +1149,7 @@ let AuthService = class AuthService {
             firstName: "Tom",
             id: 1
         };
+        this.reader = this.dataService.getAllReaders().filter(reader => reader.name === this.currentUser.userName)[0];
     }
     isLoggedIn() {
         return !!this.currentUser;
@@ -1071,8 +1159,11 @@ let AuthService = class AuthService {
         this.currentUser.firstName = profile.firstName;
     }
 };
-AuthService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)()
+AuthService.ctorParameters = () => [
+    { type: app_core_data_service__WEBPACK_IMPORTED_MODULE_0__.DataService }
+];
+AuthService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)()
 ], AuthService);
 
 
@@ -1144,6 +1235,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ 658:
+/*!*******************************************************************************************************!*\
+  !*** data:text/css;charset=utf-8;base64,CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgIA== ***!
+  \*******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n            span{margin-left:2px}\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNzcztjaGFyc2V0PXV0Zi04O2Jhc2U2NCxDaUFnSUNBZ0lDQWdJQ0FnSUhOd1lXNTdiV0Z5WjJsdUxXeGxablE2TW5CNGZRb2dJQ0FnSUNBZ0lBPT0iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZLEtBQUssZUFBZSIsImZpbGUiOiJjc3M7Y2hhcnNldD11dGYtODtiYXNlNjQsQ2lBZ0lDQWdJQ0FnSUNBZ0lITndZVzU3YldGeVoybHVMV3hsWm5RNk1uQjRmUW9nSUNBZ0lDQWdJQT09Iiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICBzcGFue21hcmdpbi1sZWZ0OjJweH1cbiAgICAgICAgIl19 */");
 
 /***/ }),
 
@@ -1252,6 +1358,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 4580:
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/component/upvote-component/upvote.component.html ***!
+  \********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<span *ngIf=\"user\" (click) = \"onClick()\">\r\n    <span *ngIf=\"!voted\">Upvote</span>\r\n    <span *ngIf=\"voted\">Unvote</span>\r\n</span>\r\n<span>\r\n    {{count}}\r\n</span>");
+
+/***/ }),
+
 /***/ 9306:
 /*!******************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dashboard/dashboard.component.html ***!
@@ -1263,7 +1384,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">All Books</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n        <li *ngFor='let book of allBooks'>\r\n          <i>{{book.title}}</i>\r\n          <a [routerLink]=\"['/editbook', book.bookID]\"> Edit </a>\r\n          <a (click)=\"deleteBook(book.bookID)\">Delete</a>\r\n        </li>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">All Readers</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n        <li *ngFor='let reader of allReaders'>\r\n          {{reader.name}}\r\n          <a [routerLink]=\"['/editreader', reader.readerID]\">Edit</a>\r\n          <a (click)=\"deleteReader(reader.readerID)\"> Delete </a>\r\n        </li>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">Most Popular Book</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n          <i>{{mostPopularBook.title}}</i> by {{mostPopularBook.author}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">All Books</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n        <li *ngFor='let book of allBooks'>\r\n          <i>{{book.title}}</i>\r\n          <a [routerLink]=\"['/editbook', book.bookID]\"> Edit </a>\r\n          <a (click)=\"deleteBook(book.bookID)\">Delete</a>\r\n          <!-- <app-upvote [voted]=\"demoBoolean\" [count]=\"countValue\"></app-upvote> -->\r\n          <!-- [voted]=\"hasVoted(book)\" -->\r\n          <!-- (vote)=\"toggleVote(book)\"  -->\r\n          <app-upvote (vote)=\"toggleVote(book)\" [voted]=\"hasVoted(book)\" [count]=\"book.voters.length\"></app-upvote>\r\n        </li>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">All Readers</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n        <li *ngFor='let reader of allReaders'>\r\n          {{reader.name}}\r\n          <a [routerLink]=\"['/editreader', reader.readerID]\">Edit</a>\r\n          <a (click)=\"deleteReader(reader.readerID)\"> Delete </a>\r\n        </li>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">Most Popular Book</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n          <i>{{mostPopularBook.title}}</i> by {{mostPopularBook.author}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>");
 
 /***/ }),
 
