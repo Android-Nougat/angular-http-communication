@@ -8,7 +8,7 @@ import { DataService } from 'app/core/data.service';
 import { BookTrackerError } from 'app/models/bookTrackerError';
 
 import { ActivatedRoute } from '@angular/router';
-import { AuthService } from 'app/service/auth.service';
+import { VoterService } from 'app/service/voter.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private dataService: DataService,
     private title: Title,
-    private authService: AuthService,
+    private voterService : VoterService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -55,21 +55,10 @@ export class DashboardComponent implements OnInit {
   }
 
   toggleVote(book: Book) {
-    if (this.hasVoted) {
-      let index = book.voters.findIndex(voter => voter.readerID === this.authService.reader.readerID);
-      book.voters.splice(index,1);
-    }else{
-      book.voters.push(this.authService.reader)
-    }
+    this.voterService.modifyVoter(book);
   }
 
   hasVoted(book: Book) {
-    if (this.authService.isLoggedIn()) {
-      // book.voters.includes(this)
-      let retrievedVoter = book.voters.filter(voter => this.authService.reader.readerID === voter.readerID)[0];
-      if (retrievedVoter)
-        return true;
-    }
-    return false;
+    return this.voterService.checkVoter(book);
   }
 }

@@ -20,6 +20,7 @@ import { AuthService } from './service/auth.service';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './component/profile-component/profile.component';
 import { UpvoteComponent } from './component/upvote-component/upvote.component';
+import { VoterService } from './service/voter.service';
 
 const route: Routes = [
   { path: 'login', component: LoginComponent },
@@ -43,7 +44,8 @@ const route: Routes = [
     { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LogResponseInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true },
-    AuthService
+    AuthService,
+    VoterService
   ],
   imports: [
     BrowserModule,

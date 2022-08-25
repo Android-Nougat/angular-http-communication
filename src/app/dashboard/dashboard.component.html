@@ -10,9 +10,6 @@
           <i>{{book.title}}</i>
           <a [routerLink]="['/editbook', book.bookID]"> Edit </a>
           <a (click)="deleteBook(book.bookID)">Delete</a>
-          <!-- <app-upvote [voted]="demoBoolean" [count]="countValue"></app-upvote> -->
-          <!-- [voted]="hasVoted(book)" -->
-          <!-- (vote)="toggleVote(book)"  -->
           <app-upvote (vote)="toggleVote(book)" [voted]="hasVoted(book)" [count]="book.voters.length"></app-upvote>
         </li>
         </div>

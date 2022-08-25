@@ -19,19 +19,15 @@ export class UpvoteComponent implements OnInit {
     user : boolean;
 
     ngOnInit(): void {  
-        // this.authService;
         of(this.authService.isLoggedIn()).subscribe(
             (data)=> 
                 this.user = data
         )
     }
 
-    constructor(private authService: AuthService) {
-
-    }
+    constructor(private authService: AuthService) {}
 
     onClick() {
-        console.log("voted")
         this.vote.emit({});
     }
 

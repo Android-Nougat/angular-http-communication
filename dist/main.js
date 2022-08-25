@@ -209,11 +209,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/forms */ 3679);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ 1841);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ 1841);
 /* harmony import */ var _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add-book/add-book.component */ 9884);
 /* harmony import */ var _add_reader_add_reader_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./add-reader/add-reader.component */ 4808);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ 5041);
@@ -227,9 +227,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./core/cache.interceptor */ 7354);
 /* harmony import */ var _component_login_component_login_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./component/login-component/login.component */ 5376);
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./service/auth.service */ 892);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/router */ 9895);
 /* harmony import */ var _component_profile_component_profile_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./component/profile-component/profile.component */ 7270);
 /* harmony import */ var _component_upvote_component_upvote_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./component/upvote-component/upvote.component */ 8150);
+/* harmony import */ var _service_voter_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./service/voter.service */ 749);
+
 
 
 
@@ -257,8 +259,8 @@ const route = [
 ];
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_15__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_16__.NgModule)({
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_16__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_17__.NgModule)({
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent,
             _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_4__.DashboardComponent,
@@ -271,19 +273,20 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_15__.__decorate)([
             _component_upvote_component_upvote_component__WEBPACK_IMPORTED_MODULE_14__.UpvoteComponent
         ],
         providers: [
-            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_16__.ErrorHandler, useClass: _core_book_tracker_error_handler_service__WEBPACK_IMPORTED_MODULE_7__.BookTrackerErrorHandlerService },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HTTP_INTERCEPTORS, useClass: _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__.AddHeaderInterceptor, multi: true },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HTTP_INTERCEPTORS, useClass: _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__.LogResponseInterceptor, multi: true },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HTTP_INTERCEPTORS, useClass: _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__.CacheInterceptor, multi: true },
-            _service_auth_service__WEBPACK_IMPORTED_MODULE_12__.AuthService
+            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_17__.ErrorHandler, useClass: _core_book_tracker_error_handler_service__WEBPACK_IMPORTED_MODULE_7__.BookTrackerErrorHandlerService },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_18__.HTTP_INTERCEPTORS, useClass: _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__.AddHeaderInterceptor, multi: true },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_18__.HTTP_INTERCEPTORS, useClass: _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__.LogResponseInterceptor, multi: true },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_18__.HTTP_INTERCEPTORS, useClass: _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__.CacheInterceptor, multi: true },
+            _service_auth_service__WEBPACK_IMPORTED_MODULE_12__.AuthService,
+            _service_voter_service__WEBPACK_IMPORTED_MODULE_15__.VoterService
         ],
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_18__.BrowserModule,
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_19__.BrowserModule,
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__.AppRoutingModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_19__.FormsModule,
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_17__.HttpClientModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_19__.ReactiveFormsModule,
-            _angular_router__WEBPACK_IMPORTED_MODULE_20__.RouterModule.forRoot(route)
+            _angular_forms__WEBPACK_IMPORTED_MODULE_20__.FormsModule,
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_18__.HttpClientModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_20__.ReactiveFormsModule,
+            _angular_router__WEBPACK_IMPORTED_MODULE_21__.RouterModule.forRoot(route)
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent]
     })
@@ -444,11 +447,9 @@ let UpvoteComponent = class UpvoteComponent {
         this.vote = new _angular_core__WEBPACK_IMPORTED_MODULE_3__.EventEmitter();
     }
     ngOnInit() {
-        // this.authService;
         (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.of)(this.authService.isLoggedIn()).subscribe((data) => this.user = data);
     }
     onClick() {
-        console.log("voted");
         this.vote.emit({});
     }
 };
@@ -892,7 +893,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var app_core_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! app/core/data.service */ 3943);
 /* harmony import */ var app_models_bookTrackerError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/models/bookTrackerError */ 5582);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var app_service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/service/auth.service */ 892);
+/* harmony import */ var app_service_voter_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/service/voter.service */ 749);
 
 
 
@@ -902,10 +903,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let DashboardComponent = class DashboardComponent {
-    constructor(dataService, title, authService, route) {
+    constructor(dataService, title, voterService, route) {
         this.dataService = dataService;
         this.title = title;
-        this.authService = authService;
+        this.voterService = voterService;
         this.route = route;
     }
     ngOnInit() {
@@ -930,28 +931,16 @@ let DashboardComponent = class DashboardComponent {
         console.warn(`Delete reader not yet implemented (readerID: ${readerID}).`);
     }
     toggleVote(book) {
-        if (this.hasVoted) {
-            let index = book.voters.findIndex(voter => voter.readerID === this.authService.reader.readerID);
-            book.voters.splice(index, 1);
-        }
-        else {
-            book.voters.push(this.authService.reader);
-        }
+        this.voterService.modifyVoter(book);
     }
     hasVoted(book) {
-        if (this.authService.isLoggedIn()) {
-            // book.voters.includes(this)
-            let retrievedVoter = book.voters.filter(voter => this.authService.reader.readerID === voter.readerID)[0];
-            if (retrievedVoter)
-                return true;
-        }
-        return false;
+        return this.voterService.checkVoter(book);
     }
 };
 DashboardComponent.ctorParameters = () => [
     { type: app_core_data_service__WEBPACK_IMPORTED_MODULE_1__.DataService },
     { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__.Title },
-    { type: app_service_auth_service__WEBPACK_IMPORTED_MODULE_3__.AuthService },
+    { type: app_service_voter_service__WEBPACK_IMPORTED_MODULE_3__.VoterService },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute }
 ];
 DashboardComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
@@ -1165,6 +1154,59 @@ AuthService.ctorParameters = () => [
 AuthService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)()
 ], AuthService);
+
+
+
+/***/ }),
+
+/***/ 749:
+/*!******************************************!*\
+  !*** ./src/app/service/voter.service.ts ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "VoterService": () => (/* binding */ VoterService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var app_core_data_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/core/data.service */ 3943);
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth.service */ 892);
+
+
+
+
+let VoterService = class VoterService {
+    constructor(authService, datdaService) {
+        this.authService = authService;
+        this.datdaService = datdaService;
+    }
+    modifyVoter(book) {
+        if (this.checkVoter(book)) {
+            let index = book.voters.findIndex(voter => voter.readerID === this.authService.reader.readerID);
+            book.voters.splice(index, 1);
+        }
+        else {
+            book.voters.push(this.authService.reader);
+            // this.datdaService.updateBook(book);
+        }
+    }
+    checkVoter(book) {
+        let retrievedVoter = book.voters.filter(voter => this.authService.reader.readerID === voter.readerID);
+        if (retrievedVoter && retrievedVoter.length > 0)
+            return true;
+        return false;
+    }
+};
+VoterService.ctorParameters = () => [
+    { type: _auth_service__WEBPACK_IMPORTED_MODULE_1__.AuthService },
+    { type: app_core_data_service__WEBPACK_IMPORTED_MODULE_0__.DataService }
+];
+VoterService = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)()
+], VoterService);
 
 
 
@@ -1384,7 +1426,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">All Books</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n        <li *ngFor='let book of allBooks'>\r\n          <i>{{book.title}}</i>\r\n          <a [routerLink]=\"['/editbook', book.bookID]\"> Edit </a>\r\n          <a (click)=\"deleteBook(book.bookID)\">Delete</a>\r\n          <!-- <app-upvote [voted]=\"demoBoolean\" [count]=\"countValue\"></app-upvote> -->\r\n          <!-- [voted]=\"hasVoted(book)\" -->\r\n          <!-- (vote)=\"toggleVote(book)\"  -->\r\n          <app-upvote (vote)=\"toggleVote(book)\" [voted]=\"hasVoted(book)\" [count]=\"book.voters.length\"></app-upvote>\r\n        </li>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">All Readers</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n        <li *ngFor='let reader of allReaders'>\r\n          {{reader.name}}\r\n          <a [routerLink]=\"['/editreader', reader.readerID]\">Edit</a>\r\n          <a (click)=\"deleteReader(reader.readerID)\"> Delete </a>\r\n        </li>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">Most Popular Book</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n          <i>{{mostPopularBook.title}}</i> by {{mostPopularBook.author}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">All Books</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n        <li *ngFor='let book of allBooks'>\r\n          <i>{{book.title}}</i>\r\n          <a [routerLink]=\"['/editbook', book.bookID]\"> Edit </a>\r\n          <a (click)=\"deleteBook(book.bookID)\">Delete</a>\r\n          <app-upvote (vote)=\"toggleVote(book)\" [voted]=\"hasVoted(book)\" [count]=\"book.voters.length\"></app-upvote>\r\n        </li>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">All Readers</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n        <li *ngFor='let reader of allReaders'>\r\n          {{reader.name}}\r\n          <a [routerLink]=\"['/editreader', reader.readerID]\">Edit</a>\r\n          <a (click)=\"deleteReader(reader.readerID)\"> Delete </a>\r\n        </li>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">Most Popular Book</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n          <i>{{mostPopularBook.title}}</i> by {{mostPopularBook.author}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>");
 
 /***/ }),
 
