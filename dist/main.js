@@ -431,7 +431,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_upvote_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./upvote.component.html */ 4580);
-/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgIA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgIA== */ 658);
+/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgICAgICBpe2JvcmRlcjpibGFja30KICAgICAgICA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgICAgICBpe2JvcmRlcjpibGFja30KICAgICAgICA= */ 813);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
 /* harmony import */ var app_service_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/service/auth.service */ 892);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 5917);
@@ -446,6 +446,10 @@ let UpvoteComponent = class UpvoteComponent {
         this.authService = authService;
         this.vote = new _angular_core__WEBPACK_IMPORTED_MODULE_3__.EventEmitter();
     }
+    set voted(val) {
+        this.iconColor = val ? "red" : "grey";
+    }
+    ;
     ngOnInit() {
         (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.of)(this.authService.isLoggedIn()).subscribe((data) => this.user = data);
     }
@@ -465,7 +469,7 @@ UpvoteComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
         selector: "app-upvote",
         template: _raw_loader_upvote_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
-        styles: [data_text_css_charset_utf_8_base64_CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgIA___WEBPACK_IMPORTED_MODULE_1__.default]
+        styles: [data_text_css_charset_utf_8_base64_CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgICAgICBpe2JvcmRlcjpibGFja30KICAgICAgICA___WEBPACK_IMPORTED_MODULE_1__.default]
     })
 ], UpvoteComponent);
 
@@ -1280,10 +1284,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 658:
-/*!*******************************************************************************************************!*\
-  !*** data:text/css;charset=utf-8;base64,CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgIA== ***!
-  \*******************************************************************************************************/
+/***/ 813:
+/*!*******************************************************************************************************************************************!*\
+  !*** data:text/css;charset=utf-8;base64,CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgICAgICBpe2JvcmRlcjpibGFja30KICAgICAgICA= ***!
+  \*******************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1291,7 +1295,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n            span{margin-left:2px}\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNzcztjaGFyc2V0PXV0Zi04O2Jhc2U2NCxDaUFnSUNBZ0lDQWdJQ0FnSUhOd1lXNTdiV0Z5WjJsdUxXeGxablE2TW5CNGZRb2dJQ0FnSUNBZ0lBPT0iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZLEtBQUssZUFBZSIsImZpbGUiOiJjc3M7Y2hhcnNldD11dGYtODtiYXNlNjQsQ2lBZ0lDQWdJQ0FnSUNBZ0lITndZVzU3YldGeVoybHVMV3hsWm5RNk1uQjRmUW9nSUNBZ0lDQWdJQT09Iiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICBzcGFue21hcmdpbi1sZWZ0OjJweH1cbiAgICAgICAgIl19 */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n            span{margin-left:2px}\n            i{border:black}\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNzcztjaGFyc2V0PXV0Zi04O2Jhc2U2NCxDaUFnSUNBZ0lDQWdJQ0FnSUhOd1lXNTdiV0Z5WjJsdUxXeGxablE2TW5CNGZRb2dJQ0FnSUNBZ0lDQWdJQ0JwZTJKdmNtUmxjanBpYkdGamEzMEtJQ0FnSUNBZ0lDQT0iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZLEtBQUssZUFBZTtZQUNwQixFQUFFLFlBQVkiLCJmaWxlIjoiY3NzO2NoYXJzZXQ9dXRmLTg7YmFzZTY0LENpQWdJQ0FnSUNBZ0lDQWdJSE53WVc1N2JXRnlaMmx1TFd4bFpuUTZNbkI0ZlFvZ0lDQWdJQ0FnSUNBZ0lDQnBlMkp2Y21SbGNqcGliR0ZqYTMwS0lDQWdJQ0FnSUNBPSIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgc3BhbnttYXJnaW4tbGVmdDoycHh9XG4gICAgICAgICAgICBpe2JvcmRlcjpibGFja31cbiAgICAgICAgIl19 */");
 
 /***/ }),
 
@@ -1411,7 +1415,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<span *ngIf=\"user\" (click) = \"onClick()\">\r\n    <span *ngIf=\"!voted\">Upvote</span>\r\n    <span *ngIf=\"voted\">Unvote</span>\r\n</span>\r\n<span>\r\n    {{count}}\r\n</span>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<span *ngIf=\"user\" (click) = \"onClick()\">\r\n    <!-- <span *ngIf=\"!voted\"><span class=\"glyphicon glyphicon-heart\"></span></span>\r\n    <span *ngIf=\"voted\">Unvote</span> -->\r\n    <i [style.color]=\"iconColor\" class=\"glyphicon glyphicon-heart\"></i>\r\n</span>\r\n<span>\r\n    {{count}}\r\n</span>");
 
 /***/ }),
 

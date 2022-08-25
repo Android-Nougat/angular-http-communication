@@ -8,15 +8,19 @@ import { of } from "rxjs";
     styles: [
         `
             span{margin-left:2px}
+            i{border:black}
         `
     ]
 })
 export class UpvoteComponent implements OnInit {
     @Input() count: number;
-    @Input() voted: boolean;
+    @Input() set voted(val: boolean){
+        this.iconColor = val ? "red" : "grey";
+    };
     @Output() vote = new EventEmitter();
 
     user : boolean;
+    iconColor: string;
 
     ngOnInit(): void {  
         of(this.authService.isLoggedIn()).subscribe(
