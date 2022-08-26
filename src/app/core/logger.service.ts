@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class LoggerService {
   log(message: string): void {
-    const timeString: String = new Date().toLocaleTimeString();
+    const timeString: string = new Date().toLocaleTimeString();
     console.log(`${message} (${timeString})`);
   }
 

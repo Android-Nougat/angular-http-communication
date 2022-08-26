@@ -21,7 +21,7 @@ export class EditReaderComponent implements OnInit {
               private badgeService: BadgeService) { }
 
   ngOnInit() {
-    let readerID: number = parseInt(this.route.snapshot.params['id']);
+    const readerID: number = parseInt(this.route.snapshot.params['id']);
     this.selectedReader = this.dataService.getReaderById(readerID);
     this.currentBadge = this.badgeService.getReaderBadge(this.selectedReader.totalMinutesRead);
   }

@@ -13,6 +13,4 @@ export class PlainLoggerService implements LoggerService {
     console.log(message);
   }
 
-  constructor() { }
-
 }

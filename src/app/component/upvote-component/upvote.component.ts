@@ -16,7 +16,7 @@ export class UpvoteComponent implements OnInit {
     @Input() count: number;
     @Input() set voted(val: boolean){
         this.iconColor = val ? "red" : "grey";
-    };
+    }
     @Output() vote = new EventEmitter();
 
     user : boolean;

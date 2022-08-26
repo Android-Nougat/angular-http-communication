@@ -18,7 +18,7 @@ export class EditBookComponent implements OnInit {
     private dataService: DataService) { }
 
   ngOnInit() {
-    let bookID: number = parseInt(this.route.snapshot.params['id']);
+    const bookID: number = parseInt(this.route.snapshot.params['id']);
     this.dataService.getBookById(bookID)
       .subscribe(
         (data: Book) => this.selectedBook = data,

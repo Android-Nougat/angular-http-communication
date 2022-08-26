@@ -9,12 +9,10 @@ import { Reader } from "app/models/reader";
 })
 export class AddReaderComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit() { }
 
   saveReader(formValues: any): void {
-    let newReader: Reader = <Reader>formValues;
+    const newReader: Reader = <Reader>formValues;
     newReader.readerID = 0;
     console.log(newReader);
     console.warn('Save new reader not yet implemented.');

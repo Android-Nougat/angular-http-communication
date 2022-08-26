@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 
 import { Book } from "app/models/book";
@@ -27,7 +26,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
 
-    let data: Book[] | BookTrackerError = this.route.snapshot.data['resolvedBooks'];
+    const data: Book[] | BookTrackerError = this.route.snapshot.data['resolvedBooks'];
     if (data instanceof BookTrackerError) {
       console.log('error ' + data.message);
     } else {
@@ -43,7 +42,7 @@ export class DashboardComponent implements OnInit {
   deleteBook(bookID: number): void {
     this.dataService.deleteBook(bookID).subscribe(
       (data: void) => {
-        let index = this.allBooks.findIndex(book => book.bookID === bookID);
+        const index = this.allBooks.findIndex(book => book.bookID === bookID);
         this.allBooks.splice(index, 1);
       },
       (err: any) => console.log(err)

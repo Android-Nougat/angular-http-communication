@@ -25,8 +25,10 @@ export class CreateEventComponent implements OnInit {
     }
 
     saveEvent(value: any) {
-
+        console.log(value)
     }
 
-    cancel(){}
+    cancel(){
+        console.log();
+    }
 }

@@ -12,7 +12,7 @@ export class VoterService {
 
     modifyVoter(book: Book) {
         if (this.checkVoter(book)) {
-            let index = book.voters.findIndex(voter => voter.readerID === this.authService.reader.readerID);
+            const index = book.voters.findIndex(voter => voter.readerID === this.authService.reader.readerID);
             book.voters.splice(index, 1);
         } else {
             book.voters.push(this.authService.reader);
@@ -21,7 +21,7 @@ export class VoterService {
     }
 
     checkVoter(book: Book) {
-        let retrievedVoter = book.voters.filter(voter => this.authService.reader.readerID === voter.readerID);
+        const retrievedVoter = book.voters.filter(voter => this.authService.reader.readerID === voter.readerID);
         if (retrievedVoter && retrievedVoter.length>0)
             return true;
         return false;

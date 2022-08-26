@@ -22,7 +22,7 @@ export class CacheInterceptor implements HttpInterceptor {
             this.cacheService.invalidateCache();
             return next.handle(req);
         }
-        let cachedData: HttpResponse<any> = this.cacheService.get(req.url);
+        const cachedData: HttpResponse<any> = this.cacheService.get(req.url);
 
         if (cachedData) {
             console.log(`Obtaining from the cache ${req} - ${req.url}`);

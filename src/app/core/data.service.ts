@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpContext, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { from, Observable, pipe, throwError } from 'rxjs'
+import { Observable, throwError } from 'rxjs'
 import { map, tap, catchError } from 'rxjs/operators';
 
 import { allBooks, allReaders } from 'app/data';
@@ -44,7 +44,7 @@ export class DataService {
   }
 
   handleHttpError(err :HttpErrorResponse):Observable<BookTrackerError>{
-    let tracker = new BookTrackerError();
+    const tracker = new BookTrackerError();
     tracker.errorNumber = 100;
     tracker.friendlyMessage = 'An error occured while receiving the data',
     tracker.message = err.message
@@ -53,7 +53,7 @@ export class DataService {
   }
 
   getBookById(id: number): Observable<Book> {
-    let getHeaders: HttpHeaders = new HttpHeaders({
+    const getHeaders: HttpHeaders = new HttpHeaders({
       'Accept': 'application/json',
       'Authorization': 'my-token'
     });
