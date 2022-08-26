@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_add_book_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./add-book.component.html */ 7052);
-/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICBlbXtmbG9hdDpyaWdodDtjb2xvcjpyZWR9CiAgICA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICBlbXtmbG9hdDpyaWdodDtjb2xvcjpyZWR9CiAgICA= */ 352);
+/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICBlbXtmbG9hdDpyaWdodDtjb2xvcjpyZWR9CiAgICA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICBlbXtmbG9hdDpyaWdodDtjb2xvcjpyZWR9CiAgICA= */ 8352);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 3679);
 /* harmony import */ var _core_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../core/data.service */ 3943);
@@ -223,11 +223,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ 3679);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ 1841);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/common/http */ 1841);
 /* harmony import */ var _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add-book/add-book.component */ 9884);
 /* harmony import */ var _add_reader_add_reader_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./add-reader/add-reader.component */ 4808);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ 5041);
@@ -241,10 +241,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./core/cache.interceptor */ 7354);
 /* harmony import */ var _component_login_component_login_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./component/login-component/login.component */ 5376);
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./service/auth.service */ 892);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/router */ 9895);
 /* harmony import */ var _component_profile_component_profile_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./component/profile-component/profile.component */ 7270);
 /* harmony import */ var _component_upvote_component_upvote_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./component/upvote-component/upvote.component */ 8150);
-/* harmony import */ var _service_voter_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./service/voter.service */ 749);
+/* harmony import */ var _service_voter_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./service/voter.service */ 4749);
+/* harmony import */ var _component_event_create_event_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./component/event/create-event.component */ 9942);
+/* harmony import */ var _component_form_group_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./component/form-group.component */ 9409);
+/* harmony import */ var _directives_location_validator_directive__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./directives/location-validator.directive */ 531);
+
+
+
 
 
 
@@ -273,8 +279,8 @@ const route = [
 ];
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_16__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_17__.NgModule)({
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_19__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_20__.NgModule)({
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent,
             _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_4__.DashboardComponent,
@@ -284,27 +290,134 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_16__.__decorate)([
             _add_reader_add_reader_component__WEBPACK_IMPORTED_MODULE_1__.AddReaderComponent,
             _component_login_component_login_component__WEBPACK_IMPORTED_MODULE_11__.LoginComponent,
             _component_profile_component_profile_component__WEBPACK_IMPORTED_MODULE_13__.ProfileComponent,
-            _component_upvote_component_upvote_component__WEBPACK_IMPORTED_MODULE_14__.UpvoteComponent
+            _component_upvote_component_upvote_component__WEBPACK_IMPORTED_MODULE_14__.UpvoteComponent,
+            _component_event_create_event_component__WEBPACK_IMPORTED_MODULE_16__.CreateEventComponent,
+            _directives_location_validator_directive__WEBPACK_IMPORTED_MODULE_18__.LocationValidator,
+            _component_form_group_component__WEBPACK_IMPORTED_MODULE_17__.FormGroupComponent
         ],
         providers: [
-            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_17__.ErrorHandler, useClass: _core_book_tracker_error_handler_service__WEBPACK_IMPORTED_MODULE_7__.BookTrackerErrorHandlerService },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_18__.HTTP_INTERCEPTORS, useClass: _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__.AddHeaderInterceptor, multi: true },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_18__.HTTP_INTERCEPTORS, useClass: _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__.LogResponseInterceptor, multi: true },
-            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_18__.HTTP_INTERCEPTORS, useClass: _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__.CacheInterceptor, multi: true },
+            { provide: _angular_core__WEBPACK_IMPORTED_MODULE_20__.ErrorHandler, useClass: _core_book_tracker_error_handler_service__WEBPACK_IMPORTED_MODULE_7__.BookTrackerErrorHandlerService },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_21__.HTTP_INTERCEPTORS, useClass: _core_add_header_interceptors__WEBPACK_IMPORTED_MODULE_8__.AddHeaderInterceptor, multi: true },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_21__.HTTP_INTERCEPTORS, useClass: _core_log_response_interceptors__WEBPACK_IMPORTED_MODULE_9__.LogResponseInterceptor, multi: true },
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_21__.HTTP_INTERCEPTORS, useClass: _core_cache_interceptor__WEBPACK_IMPORTED_MODULE_10__.CacheInterceptor, multi: true },
             _service_auth_service__WEBPACK_IMPORTED_MODULE_12__.AuthService,
             _service_voter_service__WEBPACK_IMPORTED_MODULE_15__.VoterService
         ],
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_19__.BrowserModule,
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_22__.BrowserModule,
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__.AppRoutingModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_20__.FormsModule,
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_18__.HttpClientModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_20__.ReactiveFormsModule,
-            _angular_router__WEBPACK_IMPORTED_MODULE_21__.RouterModule.forRoot(route)
+            _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormsModule,
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_21__.HttpClientModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_23__.ReactiveFormsModule,
+            _angular_router__WEBPACK_IMPORTED_MODULE_24__.RouterModule.forRoot(route)
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent]
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ 9942:
+/*!***********************************************************!*\
+  !*** ./src/app/component/event/create-event.component.ts ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CreateEventComponent": () => (/* binding */ CreateEventComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _raw_loader_create_event_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./create-event.component.html */ 1540);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
+
+
+
+let CreateEventComponent = class CreateEventComponent {
+    constructor() {
+        this.location = {
+            address: "",
+            city: "",
+            country: ""
+        };
+    }
+    ngOnInit() {
+        // throw new Error("Method not implemented.");
+    }
+    saveEvent(value) {
+    }
+    cancel() { }
+};
+CreateEventComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Component)({
+        template: _raw_loader_create_event_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
+        selector: "app-event"
+    })
+], CreateEventComponent);
+
+
+
+/***/ }),
+
+/***/ 9409:
+/*!***************************************************!*\
+  !*** ./src/app/component/form-group.component.ts ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FormGroupComponent": () => (/* binding */ FormGroupComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICBwe2NvbG9yOnJlZH0KICAgIGJ1dHRvbixpbnB1dHttYXJnaW46MXJlbSAycmVtO30KICAgIA___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICBwe2NvbG9yOnJlZH0KICAgIGJ1dHRvbixpbnB1dHttYXJnaW46MXJlbSAycmVtO30KICAgIA== */ 970);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
+
+
+
+let FormGroupComponent = class FormGroupComponent {
+    constructor() {
+        this.name = { first: 'Nancy', middle: 'J', last: 'Drew' };
+    }
+    onSubmit(f) {
+        console.log(f.value); // {name: {first: 'Nancy', middle: 'J', last: 'Drew'}, email: ''}
+        console.log(f.valid); // true
+    }
+    setValue() {
+        this.name = { first: 'Bess', middle: 'S', last: 'Marvin' };
+    }
+};
+FormGroupComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Component)({
+        selector: 'example-app',
+        template: `
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <p *ngIf="nameCtrl.invalid">Name is invalid.</p>
+
+      <div ngModelGroup="name" #nameCtrl="ngModelGroup">
+        <input name="first" placeholder="firstName" [(ngModel)]="name.first" minlength="2">
+        <br/>
+        <input name="middle" placeholder="middleName" [(ngModel)]="name.middle" maxlength="2">
+        <br/>
+        <input name="last" placeholder="lastname" [(ngModel)]="name.last" required>
+        <br/>
+      </div>
+
+      <input name="email" ngModel>
+      <br/>
+      <button>Submit</button>
+      <br/>
+    </form>
+
+    <button (click)="setValue()">Set value</button>
+  `,
+        styles: [data_text_css_charset_utf_8_base64_CiAgICBwe2NvbG9yOnJlZH0KICAgIGJ1dHRvbixpbnB1dHttYXJnaW46MXJlbSAycmVtO30KICAgIA___WEBPACK_IMPORTED_MODULE_0__.default]
+    })
+], FormGroupComponent);
 
 
 
@@ -445,7 +558,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_upvote_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./upvote.component.html */ 4580);
-/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgICAgICBpe2JvcmRlcjpibGFja30KICAgICAgICA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgICAgICBpe2JvcmRlcjpibGFja30KICAgICAgICA= */ 813);
+/* harmony import */ var data_text_css_charset_utf_8_base64_CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgICAgICBpe2JvcmRlcjpibGFja30KICAgICAgICA___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! data:text/css;charset=utf-8;base64,CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgICAgICBpe2JvcmRlcjpibGFja30KICAgICAgICA= */ 8813);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
 /* harmony import */ var app_service_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/service/auth.service */ 892);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 5917);
@@ -911,7 +1024,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var app_core_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! app/core/data.service */ 3943);
 /* harmony import */ var app_models_bookTrackerError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/models/bookTrackerError */ 5582);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var app_service_voter_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/service/voter.service */ 749);
+/* harmony import */ var app_service_voter_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/service/voter.service */ 4749);
 
 
 
@@ -997,6 +1110,47 @@ const allBooks = [
     { bookID: 5, title: 'Curious George', author: 'H. A. Rey', publicationYear: 1941, voters: [] },
     { bookID: 6, title: 'Alice\'s Adventures in Wonderland', author: 'Lewis Carroll', publicationYear: 1865, voters: [] },
 ];
+
+
+/***/ }),
+
+/***/ 531:
+/*!************************************************************!*\
+  !*** ./src/app/directives/location-validator.directive.ts ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LocationValidator": () => (/* binding */ LocationValidator)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 3679);
+var LocationValidator_1;
+
+
+
+let LocationValidator = LocationValidator_1 = class LocationValidator {
+    validate(formGroup) {
+        let addressControl = formGroup.controls['address'];
+        let city = formGroup.controls['city'];
+        let country = formGroup.controls['country'];
+        let onlineUrl = formGroup.root.controls['onlineUrl'];
+        if ((addressControl && addressControl.value && city && city.value && country && country.value) || (onlineUrl && onlineUrl.value))
+            return null;
+        else
+            return { validateLocation: false };
+    }
+};
+LocationValidator = LocationValidator_1 = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Directive)({
+        selector: '[validateLocation]',
+        providers: [{ provide: _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NG_VALIDATORS, useExisting: LocationValidator_1, multi: true }]
+    })
+], LocationValidator);
+
 
 
 /***/ }),
@@ -1177,7 +1331,7 @@ AuthService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 749:
+/***/ 4749:
 /*!******************************************!*\
   !*** ./src/app/service/voter.service.ts ***!
   \******************************************/
@@ -1298,7 +1452,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 813:
+/***/ 8813:
 /*!*******************************************************************************************************************************************!*\
   !*** data:text/css;charset=utf-8;base64,CiAgICAgICAgICAgIHNwYW57bWFyZ2luLWxlZnQ6MnB4fQogICAgICAgICAgICBpe2JvcmRlcjpibGFja30KICAgICAgICA= ***!
   \*******************************************************************************************************************************************/
@@ -1343,7 +1497,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 352:
+/***/ 8352:
 /*!*******************************************************************************************!*\
   !*** data:text/css;charset=utf-8;base64,CiAgICBlbXtmbG9hdDpyaWdodDtjb2xvcjpyZWR9CiAgICA= ***!
   \*******************************************************************************************/
@@ -1355,6 +1509,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n    em{float:right;color:red}\n    \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNzcztjaGFyc2V0PXV0Zi04O2Jhc2U2NCxDaUFnSUNCbGJYdG1iRzloZERweWFXZG9kRHRqYjJ4dmNqcHlaV1I5Q2lBZ0lDQT0iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtJQUNJLEdBQUcsV0FBVyxDQUFDLFNBQVMiLCJmaWxlIjoiY3NzO2NoYXJzZXQ9dXRmLTg7YmFzZTY0LENpQWdJQ0JsYlh0bWJHOWhkRHB5YVdkb2REdGpiMnh2Y2pweVpXUjlDaUFnSUNBPSIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgIGVte2Zsb2F0OnJpZ2h0O2NvbG9yOnJlZH1cbiAgICAiXX0= */");
+
+/***/ }),
+
+/***/ 970:
+/*!***************************************************************************************************************************!*\
+  !*** data:text/css;charset=utf-8;base64,CiAgICBwe2NvbG9yOnJlZH0KICAgIGJ1dHRvbixpbnB1dHttYXJnaW46MXJlbSAycmVtO30KICAgIA== ***!
+  \***************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n    p{color:red}\n    button,input{margin:1rem 2rem;}\n    \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNzcztjaGFyc2V0PXV0Zi04O2Jhc2U2NCxDaUFnSUNCd2UyTnZiRzl5T25KbFpIMEtJQ0FnSUdKMWRIUnZiaXhwYm5CMWRIdHRZWEpuYVc0Nk1YSmxiU0F5Y21WdE8zMEtJQ0FnSUE9PSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0lBQ0ksRUFBRSxTQUFTO0lBQ1gsYUFBYSxnQkFBZ0IsQ0FBQyIsImZpbGUiOiJjc3M7Y2hhcnNldD11dGYtODtiYXNlNjQsQ2lBZ0lDQndlMk52Ykc5eU9uSmxaSDBLSUNBZ0lHSjFkSFJ2Yml4cGJuQjFkSHR0WVhKbmFXNDZNWEpsYlNBeWNtVnRPMzBLSUNBZ0lBPT0iLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICBwe2NvbG9yOnJlZH1cbiAgICBidXR0b24saW5wdXR7bWFyZ2luOjFyZW0gMnJlbTt9XG4gICAgIl19 */");
 
 /***/ }),
 
@@ -1400,6 +1569,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<nav class=\"navbar navbar-default\">\r\n    <div class=\"container-fluid\">\r\n        <!-- Brand and toggle get grouped for better mobile display -->\r\n        <div class=\"navbar-header\">\r\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\"\r\n                data-target=\"#bs-example-navbar-collapse-1\">\r\n                <span class=\"sr-only\">Toggle navigation</span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n            </button>\r\n            <a class=\"navbar-brand\" [routerLink]=\"['/dashboard']\">Book Tracker</a>\r\n        </div>\r\n\r\n        <!-- Collect the nav links, forms, and other content for toggling -->\r\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n            <ul class=\"nav navbar-nav\">\r\n                <li><a [routerLink]=\"['/addbook']\">Add Book<span class=\"sr-only\">(current)</span></a></li>\r\n                <li><a [routerLink]=\"['/addreader']\">Add Reader</a></li>\r\n\r\n                <li><div *ngIf=\"!authService.isLoggedIn()\"><a [routerLink]=\"['login']\">Login</a></div></li>\r\n                <li><div *ngIf=\"authService.isLoggedIn()\"><a [routerLink]=\"['profile']\">Welcome {{authService.currentUser.userName}}</a></div></li>\r\n                <!-- <li><div ><a [routerLink]=\"['profile']\">Profile</a></div></li> -->\r\n            </ul>\r\n        </div><!-- /.navbar-collapse -->\r\n    </div><!-- /.container-fluid -->\r\n</nav>\r\n\r\n<router-outlet></router-outlet>");
+
+/***/ }),
+
+/***/ 1540:
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/component/event/create-event.component.html ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<h1>New Event</h1>\r\n<hr />\r\n<div class=\"col-md-6\">\r\n  <form\r\n    #newEventForm=\"ngForm\"\r\n    (ngSubmit)=\"saveEvent(newEventForm.value)\"\r\n    autocomplete=\"off\"\r\n    novalidate\r\n  >\r\n    <div\r\n      class=\"form-group\"\r\n      [ngClass]=\"{\r\n        error:\r\n          newEventForm.controls.name?.invalid &&\r\n          newEventForm.controls.name?.touched\r\n      }\"\r\n    >\r\n      <label for=\"eventName\">Event Name:</label>\r\n      <em\r\n        *ngIf=\"\r\n          newEventForm.controls.name?.invalid &&\r\n          newEventForm.controls.name?.touched\r\n        \"\r\n        >Required</em\r\n      >\r\n      <input\r\n        [(ngModel)]=\"name\"\r\n        name=\"name\"\r\n        required\r\n        id=\"name\"\r\n        type=\"text\"\r\n        class=\"form-control\"\r\n        placeholder=\"Name of your event...\"\r\n      />\r\n    </div>\r\n    <div\r\n      class=\"form-group\"\r\n      [ngClass]=\"{\r\n        error:\r\n          newEventForm.controls.date?.invalid &&\r\n          newEventForm.controls.date?.touched\r\n      }\"\r\n    >\r\n      <label for=\"eventDate\">Event Date:</label>\r\n      <em\r\n        *ngIf=\"\r\n          newEventForm.controls.date?.invalid &&\r\n          newEventForm.controls.date?.touched\r\n        \"\r\n        >Required</em\r\n      >\r\n      <input\r\n        [(ngModel)]=\"date\"\r\n        name=\"date\"\r\n        required\r\n        id=\"eventDate\"\r\n        type=\"text\"\r\n        class=\"form-control\"\r\n        placeholder=\"format (mm/dd/yyyy)...\"\r\n      />\r\n    </div>\r\n    <div\r\n      class=\"form-group\"\r\n      [ngClass]=\"{\r\n        error:\r\n          newEventForm.controls.time?.invalid &&\r\n          newEventForm.controls.time?.touched\r\n      }\"\r\n    >\r\n      <label for=\"eventTime\">Event Time:</label>\r\n      <em\r\n        *ngIf=\"\r\n          newEventForm.controls.time?.invalid &&\r\n          newEventForm.controls.time?.touched\r\n        \"\r\n        >Required</em\r\n      >\r\n      <input\r\n        [(ngModel)]=\"time\"\r\n        name=\"time\"\r\n        required\r\n        id=\"eventTime\"\r\n        type=\"text\"\r\n        class=\"form-control\"\r\n        placeholder=\"start and end time...\"\r\n      />\r\n    </div>\r\n    <div\r\n      class=\"form-group\"\r\n      [ngClass]=\"{\r\n        error:\r\n          newEventForm.controls.price?.invalid &&\r\n          newEventForm.controls.price?.touched\r\n      }\"\r\n    >\r\n      <label for=\"eventPrice\">Event Price:</label>\r\n      <em\r\n        *ngIf=\"\r\n          newEventForm.controls.price?.invalid &&\r\n          newEventForm.controls.price?.touched\r\n        \"\r\n        >Required</em\r\n      >\r\n      <input\r\n        [(ngModel)]=\"price\"\r\n        name=\"price\"\r\n        required\r\n        id=\"eventPrice\"\r\n        type=\"text\"\r\n        type=\"number\"\r\n        class=\"form-control\"\r\n        placeholder=\"event price...\"\r\n      />\r\n    </div>\r\n\r\n    <div ngModelGroup=\"location\" #locationGroup = \"ngModelGroup\" validateLocation>\r\n      <div class=\"form-group\">\r\n        <label for=\"address\">Event Location:</label>\r\n        <input\r\n          [(ngModel)]=\"location.address\"\r\n          name=\"address\"\r\n          id=\"address\"\r\n          type=\"text\"\r\n          class=\"form-control\"\r\n          placeholder=\"Address of event...\"\r\n        />\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n          <input\r\n            [(ngModel)]=\"location.city\"\r\n            name=\"city\"\r\n            id=\"city\"\r\n            type=\"text\"\r\n            class=\"form-control\"\r\n            placeholder=\"City...\"\r\n          />\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n          <input\r\n            [(ngModel)]=\"location.country\"\r\n            name=\"country\"\r\n            id=\"country\"\r\n            type=\"text\"\r\n            class=\"form-control\"\r\n            placeholder=\"Country...\"\r\n          />\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"onlineUrl\">Online Url:</label>\r\n      <input\r\n        [(ngModel)]=\"onlineUrl\"\r\n        name=\"onlineUrl\"\r\n        id=\"onlineUrl\"\r\n        type=\"text\"\r\n        class=\"form-control\"\r\n        (change)=\"locationGroup.control.controls.address.updateValueAndValidity()\"\r\n        placeholder=\"Online Url...\"\r\n      />\r\n    </div>\r\n    <div\r\n      class=\"form-group\"\r\n      [ngClass]=\"{\r\n        error:\r\n          newEventForm.controls.imageUrl?.invalid &&\r\n          newEventForm.controls.imageUrl?.touched\r\n      }\"\r\n    >\r\n      <label for=\"imageUrl\">Image:</label>\r\n      <em\r\n        *ngIf=\"\r\n          newEventForm.controls.imageUrl?.invalid &&\r\n          newEventForm.controls.imageUrl?.touched &&\r\n          newEventForm.controls.imageUrl?.errors.required\r\n        \"\r\n        >Required</em\r\n      >\r\n      <em\r\n        *ngIf=\"\r\n          newEventForm.controls.imageUrl?.invalid &&\r\n          newEventForm.controls.imageUrl?.touched &&\r\n          newEventForm.controls.imageUrl?.errors.pattern\r\n        \"\r\n        >Must be a png or jpg url</em\r\n      >\r\n      <input\r\n        [(ngModel)]=\"imageUrl\"\r\n        name=\"imageUrl\"\r\n        required\r\n        pattern=\".*\\/.*.(png|jpg)\"\r\n        id=\"imageUrl\"\r\n        type=\"text\"\r\n        class=\"form-control\"\r\n        placeholder=\"url of image...\"\r\n      />\r\n      <img />\r\n    </div>\r\n\r\n    <button\r\n      type=\"submit\"\r\n      [disabled]=\"newEventForm.invalid\"\r\n      class=\"btn btn-primary\"\r\n    >\r\n      Save\r\n    </button>\r\n    <button type=\"button\" class=\"btn btn-default\" (click)=\"cancel()\">\r\n      Cancel\r\n    </button>\r\n  </form>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -1459,7 +1643,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">All Books</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n        <li *ngFor='let book of allBooks'>\r\n          <i>{{book.title}}</i>\r\n          <a [routerLink]=\"['/editbook', book.bookID]\"> Edit </a>\r\n          <a (click)=\"deleteBook(book.bookID)\">Delete</a>\r\n          <app-upvote (vote)=\"toggleVote(book)\" [voted]=\"hasVoted(book)\" [count]=\"book.voters.length\"></app-upvote>\r\n        </li>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">All Readers</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n        <li *ngFor='let reader of allReaders'>\r\n          {{reader.name}}\r\n          <a [routerLink]=\"['/editreader', reader.readerID]\">Edit</a>\r\n          <a (click)=\"deleteReader(reader.readerID)\"> Delete </a>\r\n        </li>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">Most Popular Book</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n          <i>{{mostPopularBook.title}}</i> by {{mostPopularBook.author}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">All Books</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n        <li *ngFor='let book of allBooks'>\r\n          <i>{{book.title}}</i>\r\n          <a [routerLink]=\"['/editbook', book.bookID]\"> Edit </a>\r\n          <a (click)=\"deleteBook(book.bookID)\">Delete</a>\r\n          <app-upvote (vote)=\"toggleVote(book)\" [voted]=\"hasVoted(book)\" [count]=\"book.voters.length\"></app-upvote>\r\n        </li>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">All Readers</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n        <li *ngFor='let reader of allReaders'>\r\n          {{reader.name}}\r\n          <a [routerLink]=\"['/editreader', reader.readerID]\">Edit</a>\r\n          <a (click)=\"deleteReader(reader.readerID)\"> Delete </a>\r\n        </li>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-lg-4\">\r\n      <div class=\"panel panel-primary\">\r\n        <div class=\"panel-heading\">\r\n          <h3 class=\"panel-title\">Most Popular Book</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n          <i>{{mostPopularBook.title}}</i> by {{mostPopularBook.author}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<example-app></example-app>\r\n<app-event></app-event>");
 
 /***/ }),
 

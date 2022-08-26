@@ -21,6 +21,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './component/profile-component/profile.component';
 import { UpvoteComponent } from './component/upvote-component/upvote.component';
 import { VoterService } from './service/voter.service';
+import { CreateEventComponent } from './component/event/create-event.component';
+import { FormGroupComponent } from './component/form-group.component';
+import { LocationValidator } from './directives/location-validator.directive';
 
 const route: Routes = [
   { path: 'login', component: LoginComponent },
@@ -37,7 +40,10 @@ const route: Routes = [
     AddReaderComponent,
     LoginComponent,
     ProfileComponent,
-    UpvoteComponent
+    UpvoteComponent,
+    CreateEventComponent,
+    LocationValidator,
+    FormGroupComponent
   ],
   providers: [
     { provide: ErrorHandler, useClass: BookTrackerErrorHandlerService },
